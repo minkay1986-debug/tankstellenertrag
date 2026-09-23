@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://minkay1986-debug.github.io/tankstellenertrag/sitemap.xml 
+Sitemap: https://minkay1986-debug.github.io/tankstellenertrag/sitemap.xml

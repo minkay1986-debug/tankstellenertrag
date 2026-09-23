@@ -5,120 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TankstellenErtrag – Wirtschaftlichkeits- und Warenwirtschaftsberatung</title>
 <meta name="description" content="TankstellenErtrag prüft vor Übernahme oder Eröffnung einer Tankstelle die wirtschaftlichen Rahmenbedingungen und zeigt Potenziale im Shopgeschäft.">
-
+<meta name="robots" content="index,follow">
 <style>
-:root{
-  --ink:#11161a;--ink2:#1c2328;--orange:#ff8a24;--orange2:#ffb15c;
-  --cream:#f7f7f4;--white:#fff;--muted:#697177;--line:#e7e8e5;
-  --green:#28b77a;--shadow:0 24px 70px rgba(15,20,24,.12);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
-a{text-decoration:none;color:inherit}
-.nav{position:sticky;top:0;z-index:20;background:rgba(17,22,26,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
-.navin{max-width:1180px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:21px;font-weight:850;letter-spacing:-.5px}
-.logo span{color:var(--orange)}
-.navlinks{display:flex;gap:28px;font-size:14px;font-weight:650;color:#dfe3e5}
-.navlinks a:hover{color:#fff}
-.navcta{background:var(--orange);color:#161616!important;padding:9px 14px;border-radius:8px}
-.hero{position:relative;overflow:hidden;background:
- radial-gradient(circle at 80% 20%,rgba(255,138,36,.20),transparent 31%),
- linear-gradient(135deg,#0f1418 0%,#20282e 60%,#12171b 100%);color:#fff}
-.hero:after{content:"";position:absolute;inset:auto -10% -160px;height:300px;background:radial-gradient(ellipse,rgba(255,138,36,.18),transparent 65%)}
-.heroin{position:relative;z-index:1;max-width:1180px;margin:auto;padding:92px 24px 105px;display:grid;grid-template-columns:1.03fr .97fr;gap:64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--orange2);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
-.eyebrow:before{content:"";width:22px;height:2px;background:var(--orange)}
-h1{font-size:clamp(44px,6vw,76px);line-height:.99;letter-spacing:-3.8px;margin:17px 0 25px;max-width:760px}
-h2{font-size:clamp(31px,4vw,48px);line-height:1.05;letter-spacing:-2px;margin:0 0 17px}
-h3{font-size:20px;letter-spacing:-.4px;margin:0 0 8px}
-.lead{font-size:19px;color:#cbd1d4;max-width:690px;margin:0 0 12px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:24px;padding:14px 20px;border-radius:9px;font-weight:800;transition:.2s transform,.2s box-shadow}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.18)}
-.btn.orange{background:var(--orange);color:#171717}.btn.ghost{border:1px solid rgba(255,255,255,.2);color:#fff;margin-left:9px}
-.dashboard{position:relative;min-height:420px}
-.dash-main{position:absolute;inset:25px 0 0 25px;background:rgba(255,255,255,.97);color:var(--ink);border-radius:18px;padding:23px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1.2deg)}
-.dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.dash-title{font-weight:850}.pill{font-size:11px;font-weight:800;padding:6px 9px;border-radius:999px;background:#eaf8f1;color:#16855a}
-.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.kpi{background:#f5f6f4;border:1px solid #e9ebe8;border-radius:12px;padding:15px}
-.kpi small{color:var(--muted);font-weight:650}.kpi strong{display:block;font-size:27px;margin-top:3px;letter-spacing:-1px}
-.kpi.orange{background:#fff3e7;border-color:#ffe0c1}.kpi.green{background:#edf9f4}
-.chart{margin-top:15px;background:#11161a;border-radius:12px;padding:17px;color:#fff;height:120px;position:relative;overflow:hidden}
-.bars{display:flex;align-items:end;gap:8px;height:70px}.bar{width:9%;border-radius:4px 4px 0 0;background:linear-gradient(#ffb15c,#ff8a24)}
-.float{position:absolute;right:-22px;bottom:8px;background:#fff;border:1px solid #eee;border-radius:14px;padding:15px 17px;box-shadow:var(--shadow);color:var(--ink);width:205px}
-.float strong{font-size:23px}.float small{display:block;color:var(--muted)}
-section{padding:90px 24px}.wrap{max-width:1180px;margin:auto}.center{text-align:center}.muted{color:var(--muted)}
-.section-intro{max-width:720px;margin:0 auto}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
-.card{border:1px solid var(--line);border-radius:16px;padding:27px;background:#fff;box-shadow:0 10px 35px rgba(15,20,24,.04);transition:.2s transform,.2s box-shadow}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.icon{width:42px;height:42px;border-radius:11px;background:#fff0e1;color:#d96700;display:grid;place-items:center;font-weight:900;margin-bottom:20px}
-.band{background:var(--cream)}
-.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:center}
-.check{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-top:25px}
-.check div{padding:15px 0;border-bottom:1px solid #ddd;font-weight:650}
-.check div:before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#e8f8f0;color:#159264;margin-right:10px;font-size:12px}
-.process{counter-reset:step}
-.step{display:grid;grid-template-columns:55px 1fr;gap:18px;padding:25px 0;border-bottom:1px solid var(--line)}
-.stepnum{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font-weight:900}
-.quote{font-size:25px;line-height:1.25;font-weight:800;letter-spacing:-.7px;border-left:4px solid var(--orange);padding:8px 0 8px 23px;max-width:900px;margin:40px auto}
-.offer{background:var(--ink);color:#fff}
-.offer .card{background:#1c2328;border-color:#323a40;color:#fff}
-.offer .muted{color:#bac2c7}
-.contact{background:linear-gradient(135deg,#fff5e9,#fff)}
-.contactbox{border:1px solid #ffd8b0;background:#fff;border-radius:20px;padding:50px;text-align:center;box-shadow:var(--shadow)}
-footer{background:#0d1114;color:#aeb5b9;padding:38px 24px}.footerin{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px}
-small{color:#8c969b}
-@media(max-width:860px){
- .heroin,.split{grid-template-columns:1fr}.dashboard{min-height:390px}
- .grid{grid-template-columns:1fr}.navlinks{display:none}
- h1{letter-spacing:-2.5px}.dash-main{inset:15px 0 0 0}
-}
-@media(max-width:560px){
- section{padding:68px 18px}.heroin{padding:68px 18px 80px}
- .btn{width:100%}.btn.ghost{margin-left:0}
- .check{grid-template-columns:1fr}.contactbox{padding:32px 20px}
- .float{right:-5px}.footerin{flex-direction:column}
-}
+:root{--ink:#11161a;--ink2:#1c2328;--orange:#ff8a24;--orange2:#ffb15c;--cream:#f7f7f4;--white:#fff;--muted:#697177;--line:#e7e8e5;--green:#28b77a;--shadow:0 24px 70px rgba(15,20,24,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}a{text-decoration:none;color:inherit}
+.nav{position:sticky;top:0;z-index:20;background:rgba(17,22,26,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}.navin{max-width:1180px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:21px;font-weight:850;letter-spacing:-.5px}.logo span{color:var(--orange)}.navlinks{display:flex;gap:28px;font-size:14px;font-weight:650;color:#dfe3e5}.navlinks a:hover{color:#fff}.navcta{background:var(--orange);color:#161616!important;padding:9px 14px;border-radius:8px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(255,138,36,.20),transparent 31%),linear-gradient(135deg,#0f1418 0%,#20282e 60%,#12171b 100%);color:#fff}.hero:after{content:"";position:absolute;inset:auto -10% -160px;height:300px;background:radial-gradient(ellipse,rgba(255,138,36,.18),transparent 65%)}.heroin{position:relative;z-index:1;max-width:1180px;margin:auto;padding:92px 24px 105px;display:grid;grid-template-columns:1.03fr .97fr;gap:64px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--orange2);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}.eyebrow:before{content:"";width:22px;height:2px;background:var(--orange)}
+h1{font-size:clamp(44px,6vw,76px);line-height:.99;letter-spacing:-3.8px;margin:17px 0 25px;max-width:760px}h2{font-size:clamp(31px,4vw,48px);line-height:1.05;letter-spacing:-2px;margin:0 0 17px}h3{font-size:20px;letter-spacing:-.4px;margin:0 0 8px}.lead{font-size:19px;color:#cbd1d4;max-width:690px;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:24px;padding:14px 20px;border-radius:9px;font-weight:800;transition:.2s transform,.2s box-shadow}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.18)}.btn.orange{background:var(--orange);color:#171717}.btn.ghost{border:1px solid rgba(255,255,255,.2);color:#fff;margin-left:9px}
+.heroCard{background:rgba(255,255,255,.97);color:var(--ink);border-radius:20px;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1deg);max-width:470px;margin-left:auto}.heroCard .big{font-size:34px;line-height:1.05;font-weight:900;letter-spacing:-1.5px;margin:16px 0}.heroCard p{color:var(--muted);font-weight:650}
+section{padding:90px 24px}.wrap{max-width:1180px;margin:auto}.center{text-align:center}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}.card{border:1px solid var(--line);border-radius:16px;padding:27px;background:#fff;box-shadow:0 10px 35px rgba(15,20,24,.04);transition:.2s transform,.2s box-shadow}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.icon{width:42px;height:42px;border-radius:11px;background:#fff0e1;color:#d96700;display:grid;place-items:center;font-weight:900;margin-bottom:20px}.band{background:var(--cream)}.check{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-top:25px}.check div{padding:15px 0;border-bottom:1px solid #ddd;font-weight:650}.check div:before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#e8f8f0;color:#159264;margin-right:10px;font-size:12px}.quote{font-size:25px;line-height:1.25;font-weight:800;letter-spacing:-.7px;border-left:4px solid var(--orange);padding:8px 0 8px 23px;max-width:900px;margin:40px auto}.offer{background:var(--ink);color:#fff}.offer .card{background:#1c2328;border-color:#323a40;color:#fff}.offer .muted{color:#bac2c7}.contact{background:linear-gradient(135deg,#fff5e9,#fff)}.contactbox{border:1px solid #ffd8b0;background:#fff;border-radius:20px;padding:50px;text-align:center;box-shadow:var(--shadow)}footer{background:#0d1114;color:#aeb5b9;padding:38px 24px}.footerin{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px}footer a{color:#d9dee1}footer a:hover{color:#fff}small{color:#8c969b}
+@media(max-width:860px){.heroin{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.navlinks{display:none}h1{letter-spacing:-2.5px}.heroCard{margin:0;max-width:none}}
+@media(max-width:560px){section{padding:68px 18px}.heroin{padding:68px 18px 80px}.btn{width:100%}.btn.ghost{margin-left:0}.check{grid-template-columns:1fr}.contactbox{padding:32px 20px}.footerin{flex-direction:column}}
 </style>
-
-
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ProfessionalService",
-  "name":"TankstellenErtrag",
-  "description":"Wirtschaftlichkeits- und Warenwirtschaftsberatung für Tankstellen und Shops.",
-  "email":"mailto:kontakt-tankstellenertrag@gmx.de",
-  "areaServed":"Deutschland",
-  "serviceType":[
-    "Wirtschaftlichkeitscheck für Tankstellen",
-    "Warenwirtschaftsberatung für Tankstellen",
-    "Ertragsanalyse für Tankstellen"
-  ]
-}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"TankstellenErtrag","description":"Wirtschaftlichkeits- und Warenwirtschaftsberatung für Tankstellen und Shops.","email":"mailto:kontakt-tankstellenertrag@gmx.de","areaServed":"Deutschland","serviceType":["Wirtschaftlichkeitscheck für Tankstellen","Warenwirtschaftsberatung für Tankstellen","Ertragsanalyse für Tankstellen"]}
 </script>
 </head>
 <body>
 <nav class="nav"><div class="navin">
-<div class="logo">Tankstellen<span>Ertrag</span></div><div style="position:absolute;left:-9999px">Testphase – Beratungsangebot im Aufbau</div>
+<div class="logo">Tankstellen<span>Ertrag</span></div>
 <div class="navlinks"><a href="#check">Wirtschaftlichkeitscheck</a><a href="#analyse">Betriebsanalyse</a><a href="#ablauf">Ablauf</a><a href="#kontakt">Kontakt</a></div>
 </div></nav>
 
 <header class="hero"><div class="heroin">
 <div>
-<div class="eyebrow">Warenwirtschaft · Ertrag · Tankstellen</div><div style="margin-top:12px;color:#9fa8ad;font-size:13px">Testphase · Beratungsangebot im Aufbau</div>
+<div class="eyebrow">Warenwirtschaft · Ertrag · Tankstellen</div>
+<div style="margin-top:12px;color:#9fa8ad;font-size:13px">Testphase · Beratungsangebot im Aufbau</div>
 <h1>Lohnt sich diese Tankstelle wirklich?</h1>
 <p class="lead">Bevor Sie eine Tankstelle übernehmen oder neu eröffnen, sollten die wirtschaftlichen Rahmenbedingungen auf dem Tisch liegen.</p>
 <p class="lead">TankstellenErtrag verbindet praktische Erfahrung aus Tankstelle und Handel mit strukturierter Kennzahlenanalyse – verständlich und auf den einzelnen Betrieb zugeschnitten.</p>
 <a class="btn orange" href="#kontakt">Wirtschaftlichkeitscheck anfragen</a>
-<a class="btn outline" href="#ablauf">So funktioniert es</a>
+<a class="btn ghost" href="#ablauf">So funktioniert es</a>
 </div>
 <div class="heroCard">
 <div class="eyebrow">TankstellenErtrag Check</div>
-<div class="big">Erst rechnen. Dann entscheiden.</div>
+<div class="big">Erst rechnen.<br>Dann entscheiden.</div>
 <p>Umsatz · Wareneinsatz · Marge · Kosten · Investitionen · Gewinnpotenzial</p>
 </div>
 </div></header>
@@ -132,25 +55,20 @@ small{color:#8c969b}
 <div class="card"><strong>04</strong><div class="icon">◆</div><h3>Investitionen</h3><p>Geplante Investitionen und deren Einfluss auf die Kalkulation sichtbar machen.</p></div>
 <div class="card"><strong>05</strong><div class="icon">=</div><h3>Mindestumsatz</h3><p>Ermitteln, welcher Umsatz unter den getroffenen Annahmen erforderlich ist.</p></div>
 <div class="card"><strong>06</strong><div class="icon">⌁</div><h3>Potenziale</h3><p>Hebel in Sortiment, Preisgestaltung und Warenwirtschaft identifizieren.</p></div>
-</div>
-</div></section>
+</div></div></section>
 
 <section id="analyse" class="band"><div class="wrap">
 <div class="eyebrow">Für bestehende Betriebe</div><h2>Nach der Eröffnung geht die Analyse weiter.</h2>
 <p class="muted">TankstellenErtrag kann bestehende Tankstellen dabei unterstützen, Zahlen nicht nur zu erfassen, sondern daraus konkrete Ansatzpunkte für die Warenwirtschaft abzuleiten.</p>
-<div class="check">
-<div>✓ Umsatz- und Rohertragsentwicklung</div><div>✓ Margen je Warengruppe</div>
-<div>✓ Schwund und Abschriften</div><div>✓ Top-/Flop-Gruppen</div>
-<div>✓ Monats- und Vorjahresvergleich</div><div>✓ Gewinnhebel und Maßnahmen</div>
-</div>
+<div class="check"><div>Umsatz- und Rohertragsentwicklung</div><div>Margen je Warengruppe</div><div>Schwund und Abschriften</div><div>Top-/Flop-Gruppen</div><div>Monats- und Vorjahresvergleich</div><div>Gewinnhebel und Maßnahmen</div></div>
 </div></section>
 
-<section id="ablauf" class="steps"><div class="wrap">
+<section id="ablauf"><div class="wrap">
 <div class="center"><div class="eyebrow">Der Ablauf</div><h2>Vom Zahlenmaterial zur Entscheidungsgrundlage.</h2></div>
 <div class="grid">
-<div class="card"><div class="num">SCHRITT 1</div><h3>Daten & Annahmen</h3><p>Gemeinsam werden die relevanten betrieblichen Eckdaten und Planungsannahmen erfasst.</p></div>
-<div class="card"><div class="num">SCHRITT 2</div><h3>Analyse</h3><p>Die Zahlen werden strukturiert ausgewertet und Auffälligkeiten bzw. Potenziale sichtbar gemacht.</p></div>
-<div class="card"><div class="num">SCHRITT 3</div><h3>Besprechung</h3><p>Die Ergebnisse werden verständlich erläutert und mögliche Maßnahmen gemeinsam betrachtet.</p></div>
+<div class="card"><div style="font-size:12px;font-weight:850;color:#d96700;margin-bottom:8px">SCHRITT 1</div><h3>Daten & Annahmen</h3><p>Gemeinsam werden die relevanten betrieblichen Eckdaten und Planungsannahmen erfasst.</p></div>
+<div class="card"><div style="font-size:12px;font-weight:850;color:#d96700;margin-bottom:8px">SCHRITT 2</div><h3>Analyse</h3><p>Die Zahlen werden strukturiert ausgewertet und Auffälligkeiten bzw. Potenziale sichtbar gemacht.</p></div>
+<div class="card"><div style="font-size:12px;font-weight:850;color:#d96700;margin-bottom:8px">SCHRITT 3</div><h3>Besprechung</h3><p>Die Ergebnisse werden verständlich erläutert und mögliche Maßnahmen gemeinsam betrachtet.</p></div>
 </div>
 <div class="quote">„Bevor Sie investieren, sollten Sie wissen, welche Zahlen Ihr Vorhaben tragen müssen.“</div>
 </div></section>
@@ -161,15 +79,19 @@ small{color:#8c969b}
 <div class="card"><h3>Standort- & Wirtschaftlichkeitscheck</h3><p class="muted">Für geplante Übernahmen und Neueröffnungen.</p></div>
 <div class="card"><h3>Betriebsanalyse</h3><p class="muted">Für bestehende Tankstellen und Shops.</p></div>
 <div class="card"><h3>Laufende Warenwirtschaftsberatung</h3><p class="muted">Für regelmäßige Auswertung, Maßnahmen und Entwicklung.</p></div>
-</div>
-</div></section>
+</div></div></section>
 
-<section id="kontakt"><div class="wrap center">
+<section id="kontakt" class="contact"><div class="wrap">
+<div class="contactbox">
 <div class="eyebrow">Kontakt</div><h2>Sie planen eine Tankstelle oder möchten Ihren Betrieb genauer analysieren?</h2>
-<p class="muted">Schreiben Sie uns kurz, worum es geht. E-Mail: kontakt-tankstellenertrag@gmx.de</p>
+<p class="muted">Schreiben Sie kurz, worum es geht.</p>
+<p><strong>kontakt-tankstellenertrag@gmx.de</strong></p>
 <a class="btn orange" href="mailto:kontakt-tankstellenertrag@gmx.de">Kontakt aufnehmen</a>
-<p><small>Hinweis: Die Website befindet sich derzeit in der Aufbauphase. Impressum, Datenschutz, Kontaktdaten und rechtliche Hinweise werden vor öffentlichen Start ergänzt und geprüft werden.</small></p>
-</div></section>
+<p><small>Hinweis: Das Beratungsangebot befindet sich derzeit in der Aufbauphase.</small></p>
+</div></div></section>
 
-<footer><div class="footerin"><div><b>TankstellenErtrag</b><br><small>Warenwirtschaftliche Beratung für Tankstellen & Shops</small></div><div><small>© 2026 TankstellenErtrag · Impressum · Datenschutz</small></div></div></footer>
+<footer><div class="footerin">
+<div><b>TankstellenErtrag</b><br><small>Warenwirtschaftliche Beratung für Tankstellen & Shops</small></div>
+<div><small>© 2026 TankstellenErtrag · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGB</a></small></div>
+</div></footer>
 </body></html>
