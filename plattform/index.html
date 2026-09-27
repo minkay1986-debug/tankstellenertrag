@@ -19,45 +19,45 @@
 <div class="wrap">
   <header class="top">
     <div class="brand">Tankstellen<span>Ertrag</span></div>
-    <div class="pill">Kundenplattform · Gründungspartner</div>
+    <div class="pill">Kundenbereich · Pilot</div>
   </header>
 
   <main id="authView" class="hero">
     <section class="panel">
       <div class="small" style="color:var(--orange2);font-weight:800;text-transform:uppercase;letter-spacing:.12em">Geschützter Kundenbereich</div>
-      <h1>Deine Tankstelle.<br>Deine Auswertung.</h1>
-      <p class="lead">Hier entsteht der zentrale Zugang für die Testkunden von TankstellenErtrag. Nach der Anmeldung gelangst du in die eigentliche Analyseplattform mit Monatsdaten, Warengruppen, Margen, Schwund, Auffälligkeiten und Beratungsbericht.</p>
+      <h1>Kundenbereich.<br>Ihre Auswertung.</h1>
+      <p class="lead">Hier befindet sich der geschützte Zugang für Pilotkunden von TankstellenErtrag. Nach der Anmeldung gelangen Sie zur Analyseplattform mit Monatsdaten, Warengruppen, Margen, Schwund, Auffälligkeiten und Beratungsbericht.</p>
       <div class="badges">
         <span class="badge">🔐 persönlicher Zugang</span>
         <span class="badge">🏪 1 Pilotstation</span>
-        <span class="badge">📊 Warenwirtschaft</span>
-        <span class="badge">📄 Beratungsbericht</span>
+        <span class="badge">📊 Auswertungen</span>
+        <span class="badge">📄 Bericht</span>
       </div>
-      <div class="feature"><b>Keine gemeinsame Kundendatenbank im Browser</b><span class="small">Die Stationsdaten werden serverseitig dem angemeldeten Benutzer zugeordnet.</span></div>
-      <div class="feature"><b>Gründungspartner werden separat freigeschaltet</b><span class="small">Die 12-monatige kostenlose Pilotphase wird nicht einfach durch eine Registrierung vergeben.</span></div>
-      <div class="feature"><b>Keine automatische kostenpflichtige Verlängerung</b><span class="small">Nach der kostenlosen Phase entsteht nicht automatisch ein kostenpflichtiges Abo.</span></div>
+      <div class="feature"><b>Stationsdaten bleiben dem jeweiligen Kundenkonto zugeordnet</b><span class="small">Die Stationsdaten werden serverseitig dem angemeldeten Kundenkonto zugeordnet.</span></div>
+      <div class="feature"><b>Pilotzugang wird separat freigeschaltet</b><span class="small">Ein Pilotzugang wird nach der Registrierung separat für die vereinbarte Pilotstation freigeschaltet.</span></div>
+      <div class="feature"><b>Keine automatische kostenpflichtige Verlängerung</b><span class="small">Nach der Pilotphase entsteht nicht automatisch ein kostenpflichtiges Abo.</span></div>
     </section>
 
     <section class="panel">
       <h2 id="formTitle" style="margin-top:0">Anmelden</h2>
-      <p id="formHint" class="small">Mit deinem Kundenkonto anmelden.</p>
+      <p id="formHint" class="small">Mit Ihrem Kundenkonto anmelden.</p>
       <div class="form">
         <div class="field"><label>E-Mail</label><input id="email" type="email" autocomplete="email" placeholder="name@unternehmen.de"></div>
         <div class="field"><label>Passwort</label><input id="password" type="password" autocomplete="current-password" placeholder="Mindestens 8 Zeichen"></div>
         <div class="actions">
           <button class="btn primary" id="loginBtn">Anmelden</button>
-          <button class="btn secondary" id="signupBtn">Konto anlegen</button>
+          <button class="btn secondary" id="signupBtn">Konto registrieren</button>
         </div>
       </div>
       <div id="status" class="status">Verbindung wird geprüft …</div>
-      <p class="small" style="margin-top:14px">Für die Pilotphase wird das Kundenkonto zunächst angelegt. Die konkrete Pilotstation wird anschließend separat verknüpft bzw. freigeschaltet.</p>
+      <p class="small" style="margin-top:14px">Das Kundenkonto kann angelegt werden. Die konkrete Pilotstation wird anschließend separat verknüpft bzw. freigeschaltet.</p>
     </section>
   </main>
 
   <section id="dashboardView" class="dashboard hidden">
     <div class="panel">
       <div class="small" style="color:var(--orange2);font-weight:800;text-transform:uppercase;letter-spacing:.12em">Kundenkonto</div>
-      <h1 style="font-size:30px">Willkommen zurück.</h1>
+      <h1 style="font-size:30px">Kundenkonto</h1>
       <p id="userLine" class="small"></p>
       <div id="stationCards" class="cards"></div>
       <div id="stationStatus" class="status"></div>
@@ -88,7 +88,7 @@ async function loadStation(session){
   const row=rows&&rows[0];
   if(!row){
     $('stationCards').innerHTML='<div class="card"><div class="label">Pilotstation</div><div class="value">Noch nicht verknüpft</div></div>';
-    $('stationStatus').textContent='Dein Kundenkonto ist angelegt. Die Pilotstation wird im nächsten Schritt verknüpft bzw. freigeschaltet.';
+    $('stationStatus').textContent='Ihr Kundenkonto ist angelegt. Die Pilotstation wird im nächsten Schritt verknüpft bzw. freigeschaltet.';
     return;
   }
   const active=row.subscription_status==='founding_partner' && row.founding_partner_free_until && new Date(row.founding_partner_free_until)>new Date();
@@ -99,7 +99,7 @@ async function loadStation(session){
     '<div class="card"><div class="label">Zugang</div><div class="value">'+(active?'Gründungspartner':activePaid?'Aktiv':esc(row.subscription_status||'—'))+'</div></div>'+
     '<div class="card"><div class="label">Zugang bis</div><div class="value">'+(end?new Date(end).toLocaleDateString('de-DE'):'—')+'</div></div>';
   $('stationStatus').className='status '+(active||activePaid?'ok':'');
-  $('stationStatus').textContent=active?'Gründungspartner-Zugang ist aktiv.':activePaid?'Bezahlzugang ist aktiv.':row.data_delete_at?'Für die Station ist eine Datenlöschung vorgemerkt.':'Station gefunden. Der Zugang muss ggf. noch freigeschaltet werden.';
+  $('stationStatus').textContent=active?'Pilotzugang ist aktiv.':activePaid?'Bezahlzugang ist aktiv.':row.data_delete_at?'Für die Station ist eine Datenlöschung vorgemerkt.':'Station gefunden. Der Zugang muss ggf. noch freigeschaltet werden.';
 }
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
 async function boot(){
