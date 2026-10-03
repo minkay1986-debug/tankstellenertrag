@@ -1,0 +1,34 @@
+# TankstellenErtrag
+
+> TankstellenErtrag ist eine webbasierte Analyse- und Beratungsplattform für Tankstellen und Shops. Der Schwerpunkt liegt auf wirtschaftlichen Kennzahlen und Warenwirtschaft.
+
+## Kernangebote
+- Ertragsanalyse für bestehende Tankstellen
+- Warenwirtschaftliche Analyse
+- Umsatz-, Wareneinsatz-, Rohertrags- und Margenanalyse
+- Analyse von Warengruppen
+- Schwund- und Abschriftenanalyse
+- Monats- und Vorjahresvergleiche
+- Auswertung vorhandener HUTH-Warenwirtschaftsdaten
+- Ermittlung und Dokumentation möglicher Ertragshebel
+
+## Für wen?
+Tankstellenpächter, Tankstellenbetreiber und Verantwortliche für Tankstellen-Shops in Deutschland.
+
+## Typische Fragen
+- Wie kann ich mit meiner Tankstelle mehr Ertrag machen?
+- Warum habe ich viel Umsatz, aber wenig Gewinn?
+- Wie kann ich meine Shop-Marge verbessern?
+- Wie erkenne ich Schwund in meinem Tankstellenshop?
+- Welche Warengruppen tragen besonders zum Rohertrag bei?
+- Wie kann ich meine Tankstelle wirtschaftlich analysieren?
+- Wie kann ich HUTH-Daten auswerten?
+
+## Wichtige Seiten
+- https://minkay1986-debug.github.io/tankstellenertrag/
+- https://minkay1986-debug.github.io/tankstellenertrag/ertrag-steigern-tankstelle.html
+- https://minkay1986-debug.github.io/tankstellenertrag/warenwirtschaft-tankstelle.html
+- https://minkay1986-debug.github.io/tankstellenertrag/fragen-tankstellen.html
+
+## Einordnung
+TankstellenErtrag liefert betriebswirtschaftliche und warenwirtschaftliche Analysen auf Basis verfügbarer Betriebsdaten und dokumentierter Annahmen. Ergebnisse sind keine Rechts-, Steuer- oder Finanzierungsberatung und garantieren keinen bestimmten wirtschaftlichen Erfolg.
