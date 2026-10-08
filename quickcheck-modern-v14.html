@@ -24,31 +24,31 @@
 <body>
 <div class="wrap">
 <header class="top"><div class="brand">Tankstellen<span>Ertrag</span></div><div class="badge">QuickCheck</div></header>
-<section class="hero"><div class="eyebrow">Wirtschaftlichkeit · Shop · Ertrag</div><h1>QuickCheck für Ihre Tankstelle.</h1><p class="lead">Wenige Eckdaten eingeben – der QuickCheck berechnet daraus sofort ein visuelles Ertragsprofil.</p></section>
+<section class="hero"><div class="eyebrow">Wirtschaftlichkeit · Shop · Ertrag</div><h1>QuickCheck für Ihre Tankstelle.</h1><p class="lead">Wenige Eckdaten eingeben – der QuickCheck zeigt sofort, wo im Shop-Ergebnis Potenzial verloren geht.</p></section>
 <main class="layout">
 <section class="glass panel">
-<div class="panelhead"><div><div class="paneltitle">Ihre Eckdaten</div><div class="paneldesc">Grundlage für die erste Einschätzung.</div></div><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+<div class="panelhead"><div><div class="paneltitle">Ihre Eckdaten</div><div class="paneldesc">Grundlage für die erste Warenwirtschafts-Analyse.</div></div><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
 <div class="formgrid">
 <div class="field"><label>Monatlicher Shop-Umsatz</label><input id="umsatz" type="number" value="120000" min="0"><small>brutto</small></div>
-<div class="field"><label>Wareneinsatz Shop</label><input id="wareneinsatz" type="number" value="85000" min="0"><small>brutto</small></div>
-<div class="field"><label>Monatlicher Kraftstoffabsatz</label><input id="liter" type="number" value="400000" min="0"><small>Liter</small></div>
-<div class="field"><label>Ø Kraftstoffspanne</label><input id="spanne" type="number" value="4.5" min="0" step=".1"><small>ct/Liter</small></div>
-<div class="field"><label>Waschstraßen / Waschplätze</label><input id="wash" type="number" value="1" min="0"><small>Anlagen</small></div>
-<div class="field"><label>Standorttyp</label><select id="standort"><option>Dorf / ländlich</option><option>Stadt</option><option>Durchfahrt / Bundesstraße</option><option>Autobahnnah</option></select></div>
-</div>
+<div class="field"><label>Wareneinsatz / EK</label><input id="wareneinsatz" type="number" value="85000" min="0"><small>Einkaufswert</small></div>
+<div class="field"><label>Schwund</label><input id="schwund" type="number" value="900" min="0"><small>monatlich</small></div>
+<div class="field"><label>Abschriften</label><input id="abschriften" type="number" value="650" min="0"><small>monatlich</small></div>
+<div class="field"><label>Sonstige Warenverluste</label><input id="sonstige" type="number" value="250" min="0"><small>z. B. Bruch / Verderb</small></div>
+<div class="field"><label>Warengruppen</label><select id="gruppen"><option>Standard-Sortiment</option><option>Erweitertes Sortiment</option><option>Sehr breites Sortiment</option></select></div>
+</div></div>
 <div class="actions"><button class="btn primary" onclick="update()">QuickCheck berechnen</button><button class="btn secondary" onclick="resetDemo()">Demo-Werte</button></div>
 </section>
 <section class="glass result">
-<div class="resulthead"><div><div class="resulttitle">Ihr Ergebnis – auf einen Blick</div><div style="font-size:12px;color:var(--muted);margin-top:3px">Live aus Ihren eingegebenen Werten</div></div><div class="live">Live berechnet</div></div>
+<div class="resulthead"><div><div class="resulttitle">Ihr Ergebnis – auf einen Blick</div><div style="font-size:12px;color:var(--muted);margin-top:3px">Live aus Ihren Warenwirtschaftsdaten</div></div><div class="live">Live berechnet</div></div>
 <div class="cockpit">
 <div class="ring" id="ring"><div class="ringinner"><div class="ringlabel">Shop-Marge</div><div class="ringvalue" id="marge">29,2 %</div><div class="ringsub">Umsatz minus Wareneinsatz</div></div></div>
 <div class="kpis">
 <div class="kpi" id="k1"><div class="klabel">Shop-Rohertrag</div><div class="kvalue" id="ertrag">35.000 €</div><div class="kunit">monatlich</div></div>
-<div class="kpi" id="k2"><div class="klabel">Kraftstoff-Spanne</div><div class="kvalue" id="fuel">18.000 €</div><div class="kunit">rechnerischer Spannenbeitrag / Monat</div></div>
-<div class="kpi" id="k3"><div class="klabel">Waschgeschäft</div><div class="kvalue" id="washout">1 Anlage</div><div class="kunit">in der Eingabe berücksichtigt</div></div>
+<div class="kpi" id="k2"><div class="klabel">Verluste gesamt</div><div class="kvalue" id="losses">1.800 €</div><div class="kunit">Schwund + Abschriften + sonstige Verluste</div></div>
+<div class="kpi" id="k3"><div class="klabel">Warenwirtschaft</div><div class="kvalue" id="efficiency">gut</div><div class="kunit" id="efficiencySub">Verlustquote im Blick</div></div>
 </div>
 </div>
-<div class="chartbox"><div class="charttitle">Shop-Struktur aus Ihren Eingaben</div><div class="bars"><div class="barcol"><div class="barvalue" id="b1v">120.000 €</div><div class="bar" id="b1" style="--h:100%"></div><div class="barname">Umsatz</div></div><div class="barcol"><div class="barvalue" id="b2v">85.000 €</div><div class="bar cost" id="b2" style="--h:71%"></div><div class="barname">Wareneinsatz</div></div><div class="barcol"><div class="barvalue" id="b3v">35.000 €</div><div class="bar profit" id="b3" style="--h:29%"></div><div class="barname">Rohertrag</div></div></div></div>
+<div class="chartbox"><div class="charttitle">Shop-Ergebnis aus Ihren Eingaben</div><div class="bars"><div class="barcol"><div class="barvalue" id="b1v">120.000 €</div><div class="bar" id="b1" style="--h:100%"></div><div class="barname">Umsatz</div></div><div class="barcol"><div class="barvalue" id="b2v">85.000 €</div><div class="bar cost" id="b2" style="--h:71%"></div><div class="barname">EK</div></div><div class="barcol"><div class="barvalue" id="b3v">35.000 €</div><div class="bar profit" id="b3" style="--h:29%"></div><div class="barname">Rohertrag</div></div></div></div>
 <div class="notice"><div><b id="noticeTitle">Ertragsprofil berechnet</b><span id="noticeText">Der QuickCheck zeigt die wichtigsten Werte auf Basis Ihrer Eingaben.</span></div><button onclick="document.querySelector('.panel').scrollIntoView({behavior:'smooth'})">Werte prüfen →</button></div>
 </section>
 </main>
@@ -56,19 +56,20 @@
 <script>
 const eur=n=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
 function update(){
- const u=Math.max(0,Number(document.getElementById('umsatz').value)||0), w=Math.max(0,Number(document.getElementById('wareneinsatz').value)||0), l=Math.max(0,Number(document.getElementById('liter').value)||0), s=Math.max(0,Number(document.getElementById('spanne').value)||0), wash=Math.max(0,Number(document.getElementById('wash').value)||0);
- const e=Math.max(0,u-w), m=u?e/u*100:0, fuel=l*s/100;
+ const u=Math.max(0,Number(document.getElementById('umsatz').value)||0), w=Math.max(0,Number(document.getElementById('wareneinsatz').value)||0), s=Math.max(0,Number(document.getElementById('schwund').value)||0), a=Math.max(0,Number(document.getElementById('abschriften').value)||0), so=Math.max(0,Number(document.getElementById('sonstige').value)||0);
+ const e=Math.max(0,u-w), losses=s+a+so, m=u?e/u*100:0, lossRate=u?losses/u*100:0;
  document.getElementById('marge').textContent=m.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1})+' %';
  document.getElementById('ertrag').textContent=eur(e);
- document.getElementById('fuel').textContent=eur(fuel);
- document.getElementById('washout').textContent=wash.toLocaleString('de-DE')+' '+(wash===1?'Anlage':'Anlagen');
+ document.getElementById('losses').textContent=eur(losses);
+ document.getElementById('efficiency').textContent=lossRate<1.0?'sehr gut':lossRate<2.0?'im Blick':'auffällig';
+ document.getElementById('efficiencySub').textContent='Verlustquote '+lossRate.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1})+' %';
  document.getElementById('b1v').textContent=eur(u);document.getElementById('b2v').textContent=eur(w);document.getElementById('b3v').textContent=eur(e);
  const max=Math.max(u,1);document.getElementById('b1').style.setProperty('--h',(u/max*100)+'%');document.getElementById('b2').style.setProperty('--h',(w/max*100)+'%');document.getElementById('b3').style.setProperty('--h',(e/max*100)+'%');
  const deg=Math.min(350,Math.max(8,m/50*350));document.getElementById('ring').style.background='conic-gradient(var(--orange) 0deg,var(--red) '+deg+'deg,rgba(255,255,255,.08) '+deg+'deg 360deg)';
- document.getElementById('noticeTitle').textContent=m<15?'Auffälligkeit erkannt':'Ertragsprofil berechnet';
- document.getElementById('noticeText').textContent=m<15?'Die aktuelle Shop-Marge ist relativ niedrig. Eine genauere Warenwirtschaftsanalyse könnte sinnvoll sein.':'Der QuickCheck zeigt die wichtigsten Werte auf Basis Ihrer Eingaben.';
+ document.getElementById('noticeTitle').textContent=lossRate>=2?'Auffälligkeit erkannt':'Warenwirtschaftsprofil berechnet';
+ document.getElementById('noticeText').textContent=lossRate>=2?'Schwund und Abschriften liegen relativ hoch. Hier könnte ein konkreter Ertragshebel liegen.':'Umsatz, EK, Schwund und Abschriften wurden in die erste Einschätzung einbezogen.';
 }
-function resetDemo(){document.getElementById('umsatz').value=120000;document.getElementById('wareneinsatz').value=85000;document.getElementById('liter').value=400000;document.getElementById('spanne').value=4.5;document.getElementById('wash').value=1;update()}
+function resetDemo(){document.getElementById('umsatz').value=120000;document.getElementById('wareneinsatz').value=85000;document.getElementById('schwund').value=900;document.getElementById('abschriften').value=650;document.getElementById('sonstige').value=250;update()}
 update();
 </script>
 </body></html>
