@@ -275,3 +275,31 @@ body>.wrap .cta{
   background:linear-gradient(145deg,rgba(255,138,36,.12),rgba(255,255,255,.035))!important;
   transform:translateY(-2px);
 }
+
+/* Shared article material for remaining content pages */
+.content-glass-page{background:transparent!important}
+.content-glass-page .wrap{
+ max-width:980px!important;margin:44px auto 56px!important;padding:54px 48px 70px!important;
+ background:rgba(7,20,38,.18)!important;border:1px solid rgba(225,244,255,.14)!important;border-radius:26px!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 -18px 42px rgba(0,0,0,.10),0 32px 90px rgba(0,0,0,.38)!important;
+ backdrop-filter:blur(28px) saturate(175%)!important;-webkit-backdrop-filter:blur(28px) saturate(175%)!important;
+ position:relative;overflow:hidden
+}
+.content-glass-page .wrap:before{
+ content:"";position:absolute;inset:0;padding:1px;border-radius:inherit;pointer-events:none;
+ background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(205,235,255,.14) 18%,rgba(255,255,255,.025) 52%,rgba(50,130,220,.10) 82%,rgba(0,0,0,.22));
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude
+}
+.content-glass-page .wrap>*{position:relative;z-index:1}
+.content-glass-page h1{color:#f3f8ff!important}
+.content-glass-page h2{color:#e8f3ff!important;margin-top:40px}
+.content-glass-page p{color:#afc2d6!important}
+.content-glass-page .lead{color:#c5d7e9!important;font-size:20px}
+.content-glass-page .box{
+ background:linear-gradient(145deg,rgba(255,138,36,.10),rgba(255,255,255,.018))!important;
+ color:#eaf4ff!important;border:1px solid rgba(255,177,95,.18)!important;border-left:3px solid #ff8a24!important;
+ border-radius:15px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 14px 34px rgba(0,0,0,.16)!important
+}
+.content-glass-page a{color:#9ed5ff!important}
+.content-glass-page footer{max-width:none!important;background:rgba(2,7,14,.78)!important}
+@media(max-width:700px){.content-glass-page .wrap{margin:22px 14px 36px!important;padding:36px 22px 48px!important;border-radius:20px!important}}
