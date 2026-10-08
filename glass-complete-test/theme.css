@@ -99,3 +99,35 @@ body{
 .muted,.lead{color:#a9bacb}
 .contactbox{border-color:rgba(180,215,245,.16) !important}
 footer{background:#02070e}
+
+/* MASTER GLASS ENVIRONMENT — v1 */
+html,body{min-height:100%;background:#06142a!important}
+body{
+  background:
+    radial-gradient(900px 600px at 8% 12%,rgba(28,104,230,.46),transparent 62%),
+    radial-gradient(760px 560px at 92% 10%,rgba(0,174,255,.30),transparent 60%),
+    radial-gradient(900px 650px at 72% 72%,rgba(63,76,220,.28),transparent 64%),
+    radial-gradient(700px 500px at 18% 88%,rgba(17,92,190,.30),transparent 65%),
+    linear-gradient(145deg,#06152d 0%,#09264a 42%,#06152c 72%,#030b19 100%)!important;
+  background-attachment:fixed!important;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(420px 280px at 28% 28%,rgba(79,170,255,.16),transparent 70%),
+    radial-gradient(500px 330px at 78% 44%,rgba(42,112,255,.13),transparent 70%);
+  filter:blur(34px);
+}
+.hero{
+  background:
+    radial-gradient(700px 430px at 78% 18%,rgba(45,151,255,.34),transparent 68%),
+    radial-gradient(520px 400px at 18% 78%,rgba(28,91,220,.24),transparent 70%),
+    linear-gradient(180deg,rgba(3,13,29,.82),rgba(6,24,49,.86))!important;
+}
+section,.band,.contact,.offer{background:transparent!important}
+.heroCard,.card,.contactbox{
+  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.009) 50%,rgba(0,0,0,.025))!important;
+}
+@supports not ((backdrop-filter:blur(1px))){
+  .heroCard,.card,.contactbox{background:rgba(9,28,53,.88)!important}
+}
