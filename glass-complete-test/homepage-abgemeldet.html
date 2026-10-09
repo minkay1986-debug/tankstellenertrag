@@ -56,14 +56,14 @@ a:hover{color:#9bcfff}
   box-shadow:0 16px 40px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.045)!important;
 }
 /* Remove old cream icon tiles and orange glyphs from this preview */
-.card .icon,.feature .icon,.step .icon,.tile .icon,
-.card .ico,.feature .ico,.step .ico,.tile .ico,
-.card .symbol,.feature .symbol,.step .symbol,.tile .symbol{
+.icon{
   background:rgba(74,156,255,.12)!important;
   color:#91cbff!important;
   border:1px solid rgba(127,190,255,.22)!important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.06)!important;
 }
+.icon{font-family:inherit!important;font-weight:700!important}
+@media(max-width:760px){.icon{width:46px!important;height:46px!important;border-radius:14px!important;background:rgba(74,156,255,.12)!important;color:#91cbff!important;border:1px solid rgba(127,190,255,.22)!important}}
 .card strong,.feature strong,.step strong,.tile strong{color:#9bcfff!important}
 h2,h3{letter-spacing:-.035em!important}
 @media(max-width:760px){
@@ -94,7 +94,11 @@ h2,h3{letter-spacing:-.035em!important}
   .navcta{padding:10px 13px!important;border-radius:12px!important;white-space:nowrap}
 }
 </style>
-</head>
+
+<style id="premium-icons-overrides">
+.icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.icon svg{width:21px;height:21px;display:block;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+</style></head>
 <body>
 <nav class="nav"><div class="navin">
 <div class="logo">Tankstellen<span>Ertrag</span></div>
@@ -122,12 +126,12 @@ h2,h3{letter-spacing:-.035em!important}
 <section id="check"><div class="wrap">
 <div class="center"><div class="eyebrow">Vor Übernahme oder Eröffnung</div><h2>Wirtschaftlichkeit prüfen, bevor Kapital gebunden wird.</h2><p class="muted">Die Analyse basiert auf den verfügbaren Daten und klar dokumentierten Annahmen. Sie ersetzt keine Rechts-, Steuer- oder Finanzierungsberatung.</p></div>
 <div class="grid">
-<div class="card"><strong>01</strong><div class="icon">€</div><h3>Umsatzpotenzial</h3><p>Tankgeschäft, Shopumsatz und Warengruppen strukturiert betrachten.</p></div>
-<div class="card"><strong>02</strong><div class="icon">↗</div><h3>Ertrag</h3><p>Wareneinsatz, Rohertrag und Margen auf wirtschaftliche Tragfähigkeit prüfen.</p></div>
-<div class="card"><strong>03</strong><div class="icon">◒</div><h3>Kosten</h3><p>Personal, Pacht/Miete, Energie und weitere laufende Kosten einbeziehen.</p></div>
-<div class="card"><strong>04</strong><div class="icon">◆</div><h3>Investitionen</h3><p>Geplante Investitionen und deren Einfluss auf die Kalkulation sichtbar machen.</p></div>
-<div class="card"><strong>05</strong><div class="icon">=</div><h3>Mindestumsatz</h3><p>Ermitteln, welcher Umsatz unter den getroffenen Annahmen erforderlich ist.</p></div>
-<div class="card"><strong>06</strong><div class="icon">⌁</div><h3>Potenziale</h3><p>Hebel in Sortiment, Preisgestaltung und Warenwirtschaft identifizieren.</p></div>
+<div class="card"><strong>01</strong><div class="icon" aria-label="Umsatz und Ertrag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.8 5.5a6.7 6.7 0 1 0 0 13"/><path d="M5 9.2h10M5 13.1h9"/></svg></div><h3>Umsatzpotenzial</h3><p>Tankgeschäft, Shopumsatz und Warengruppen strukturiert betrachten.</p></div>
+<div class="card"><strong>02</strong><div class="icon" aria-label="Ertrag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17 17 5"/><path d="M8 5h9v9"/></svg></div><h3>Ertrag</h3><p>Wareneinsatz, Rohertrag und Margen auf wirtschaftliche Tragfähigkeit prüfen.</p></div>
+<div class="card"><strong>03</strong><div class="icon" aria-label="Kosten"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M7.5 12h9"/></svg></div><h3>Kosten</h3><p>Personal, Pacht/Miete, Energie und weitere laufende Kosten einbeziehen.</p></div>
+<div class="card"><strong>04</strong><div class="icon" aria-label="Investitionen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 9-8 9-8-9 8-9Z"/><path d="M12 3v18M4 12h16"/></svg></div><h3>Investitionen</h3><p>Geplante Investitionen und deren Einfluss auf die Kalkulation sichtbar machen.</p></div>
+<div class="card"><strong>05</strong><div class="icon" aria-label="Ergebnis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h14M5 15h14"/></svg></div><h3>Mindestumsatz</h3><p>Ermitteln, welcher Umsatz unter den getroffenen Annahmen erforderlich ist.</p></div>
+<div class="card"><strong>06</strong><div class="icon" aria-label="Analyse"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-5 3 2 5-7"/></svg></div><h3>Potenziale</h3><p>Hebel in Sortiment, Preisgestaltung und Warenwirtschaft identifizieren.</p></div>
 </div></div></section>
 
 <section id="analyse" class="band"><div class="wrap">
