@@ -463,3 +463,30 @@ body>.wrap .cta{
  .performance-chart{min-height:150px!important}
  .chart-foot{font-size:9px!important}
 }
+
+
+/* LOGIN + REGISTRATION ACTIONS — isolated preview */
+.navactions{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+.navactions a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:9px 15px;border-radius:999px;font-size:13px;font-weight:800;white-space:nowrap;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.navactions a:hover{transform:translateY(-1px)}
+.navactions .navlogin{color:#eaf4ff!important;background:rgba(255,255,255,.045);border:1px solid rgba(205,231,255,.24)}
+.navactions .navlogin:hover{background:rgba(255,255,255,.10);border-color:rgba(205,231,255,.45)}
+.navactions .navregister{color:#151a22!important;background:linear-gradient(135deg,#ffb45f,#ff8a24);border:1px solid rgba(255,192,127,.65);box-shadow:0 6px 20px rgba(255,138,36,.16)}
+.navactions .navregister:hover{box-shadow:0 8px 26px rgba(255,138,36,.28)}
+@media(max-width:1100px){
+ .navin{gap:14px!important;padding-left:18px!important;padding-right:18px!important}
+ .navlinks{gap:15px!important;font-size:12px!important}
+ .navactions{gap:7px}
+ .navactions a{padding:8px 11px;font-size:12px}
+}
+@media(max-width:860px){
+ .navin{justify-content:space-between!important}
+ .navlinks{display:none!important}
+ .navactions{margin-left:auto}
+}
+@media(max-width:420px){
+ .navin{padding-left:13px!important;padding-right:13px!important;gap:8px!important}
+ .logo{font-size:18px!important}
+ .navactions{gap:6px}
+ .navactions a{min-height:34px;padding:7px 9px;font-size:11px}
+}
