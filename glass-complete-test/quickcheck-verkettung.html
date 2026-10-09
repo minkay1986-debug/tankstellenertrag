@@ -21,17 +21,32 @@ body:after{content:"";position:fixed;left:50%;bottom:-150px;transform:translateX
 .chartbox{margin-top:18px;border:1px solid rgba(173,211,239,.12);border-top-color:rgba(215,239,255,.22);border-radius:19px;padding:17px;background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(3,10,19,.55));box-shadow:inset 0 1px 0 rgba(215,240,255,.09),inset 0 -2px 0 rgba(0,0,0,.22),inset 0 0 55px rgba(58,142,235,.028),0 14px 40px rgba(0,0,0,.27)}.charthead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:8px}.charttitle{font-size:13px;font-weight:850;color:#e5e9eb}.chartsub{font-size:10px;color:#78838a}.curvechart{width:100%;height:auto;display:block;overflow:visible}.curvegrid line{stroke:rgba(120,175,225,.09);stroke-width:1}.curvearea{fill:url(#curveFill)}.curvepath{fill:none;stroke:url(#curveLine);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;filter:url(#curveGlow)}.curvepoint{fill:#7fc0ff;stroke:#fff;stroke-width:2;filter:url(#curveGlow)}.curvelabel{fill:#dce2e5;font-size:11px;font-weight:800}.curvevalue{fill:#aeb8be;font-size:10px;font-weight:700}.insight{margin-top:14px;display:grid;grid-template-columns:1.25fr .75fr;gap:11px}.insightmain,.potential{border:1px solid rgba(255,255,255,.13);border-radius:15px;padding:15px;background:linear-gradient(145deg,rgba(74,156,255,.09),rgba(255,255,255,.028));box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}.insightlabel{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--blue2);font-weight:850}.insighttitle{font-size:15px;font-weight:900;margin-top:5px}.insighttext{font-size:11px;color:#9ea8ad;line-height:1.45;margin-top:4px}.potential{text-align:right;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(5,8,10,.2))}.potential .pval{font-size:24px;font-weight:900;color:#fff}.potential .pdesc{font-size:10px;color:#7f8a90;line-height:1.35}.notice{margin-top:12px;font-size:10px;color:#7f898f}
 @keyframes rise{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.wf-anim{animation:rise .55s ease both}
 @media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.kpi:last-child{grid-column:1/-1}}@media(max-width:760px){.layout{grid-template-columns:1fr}}@media(max-width:620px){.wrap{width:calc(100% - 24px)}.badge{display:none}.formgrid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.kpis{grid-template-columns:1fr}.kpi:last-child{grid-column:auto}.charthead{align-items:flex-start;flex-direction:column}.insight{grid-template-columns:1fr}.potential{text-align:left}.wf-label{font-size:10px}.wf-value{font-size:9px}}
-/* QuickCheck: one coherent translucent glass tile, no hard nested box */
-.layout > section.glass.panel{
-  border-radius:22px!important;
-  background:linear-gradient(135deg,rgba(90,165,255,.16),rgba(18,45,78,.26) 48%,rgba(8,22,39,.20)) padding-box!important;
-  border:1px solid rgba(196,226,255,.25)!important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 1px 0 0 rgba(220,241,255,.10),inset 0 -18px 36px rgba(2,12,26,.12),0 20px 54px rgba(0,0,0,.28),0 0 36px rgba(66,151,255,.09)!important;
-  backdrop-filter:blur(24px) saturate(165%)!important;-webkit-backdrop-filter:blur(24px) saturate(165%)!important;
+/* Final Glass refinement: deep navy, restrained blue highlights, coherent glass surface */
+body{
+ background:
+ radial-gradient(620px 420px at 92% 8%,rgba(40,112,190,.13),transparent 70%),
+ radial-gradient(560px 420px at 4% 76%,rgba(30,83,143,.09),transparent 72%),
+ linear-gradient(180deg,#020813 0%,#061326 52%,#071321 100%)!important;
 }
-.layout > section.glass.panel:before{background:linear-gradient(135deg,rgba(255,255,255,.48),rgba(220,241,255,.18) 18%,rgba(255,255,255,.045) 42%,transparent 65%,rgba(125,190,245,.10))!important}
-.hero{border:1px solid rgba(202,230,255,.18);border-radius:18px;padding:28px 24px!important;margin:8px 0 18px;background:linear-gradient(135deg,rgba(80,156,240,.13),rgba(14,38,68,.25))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 12px 32px rgba(0,0,0,.12);backdrop-filter:blur(20px) saturate(145%);-webkit-backdrop-filter:blur(20px) saturate(145%)}
-@media(max-width:620px){.hero{border-radius:16px;padding:22px 17px!important}.layout > section.glass.panel{border-radius:18px!important;padding:clamp(15px,4vw,21px)}}
+.layout > section.glass.panel{
+ border-radius:22px!important;
+ background:linear-gradient(135deg,rgba(15,42,72,.72),rgba(7,22,40,.80) 48%,rgba(5,17,32,.76)) padding-box!important;
+ border:1px solid rgba(160,207,246,.25)!important;
+ box-shadow:inset 0 1px 0 rgba(240,249,255,.28),inset 1px 0 0 rgba(215,237,255,.08),inset 0 -22px 42px rgba(0,0,0,.20),0 22px 56px rgba(0,0,0,.42),0 0 32px rgba(42,119,205,.08)!important;
+ backdrop-filter:blur(26px) saturate(135%)!important;-webkit-backdrop-filter:blur(26px) saturate(135%)!important;
+}
+.layout > section.glass.panel:before{
+ background:linear-gradient(135deg,rgba(245,251,255,.40),rgba(190,224,250,.13) 17%,rgba(255,255,255,.025) 43%,transparent 67%,rgba(98,160,215,.08))!important;
+}
+.hero{
+ border:1px solid rgba(164,207,242,.22)!important;border-radius:18px!important;
+ padding:28px 24px!important;margin:8px 0 18px;
+ background:linear-gradient(135deg,rgba(13,37,65,.72),rgba(6,21,39,.82))!important;
+ box-shadow:inset 0 1px 0 rgba(230,245,255,.16),0 14px 34px rgba(0,0,0,.20)!important;
+ backdrop-filter:blur(24px) saturate(130%)!important;-webkit-backdrop-filter:blur(24px) saturate(130%)!important;
+}
+.hero:before{background:linear-gradient(120deg,rgba(180,220,255,.07),transparent 42%,rgba(90,150,210,.05))!important}
+@media(max-width:620px){.hero{border-radius:16px!important;padding:22px 17px!important}.layout > section.glass.panel{border-radius:18px!important;padding:clamp(15px,4vw,21px)}}
 </style>
 <link rel="stylesheet" href="theme.css">
 </head>
