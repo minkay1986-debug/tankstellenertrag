@@ -303,3 +303,69 @@ body>.wrap .cta{
 .content-glass-page a{color:#9ed5ff!important}
 .content-glass-page footer{max-width:none!important;background:rgba(2,7,14,.78)!important}
 @media(max-width:700px){.content-glass-page .wrap{margin:22px 14px 36px!important;padding:36px 22px 48px!important;border-radius:20px!important}}
+
+
+/* HOMEPAGE ROUND GLASS DASHBOARD — isolated preview only */
+.heroCard,.card,.contactbox{
+  position:relative!important;overflow:hidden!important;border-radius:26px!important;
+}
+.dashboard-preview{
+  width:100%;max-width:570px!important;margin-left:auto!important;padding:24px!important;
+  transform:none!important;
+  background:
+    radial-gradient(ellipse at 100% 0%,rgba(60,143,255,.13),transparent 55%),
+    linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.012) 55%,rgba(3,12,28,.18))!important;
+  border:1px solid rgba(219,241,255,.23)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.42),inset 0 -18px 35px rgba(0,0,0,.10),0 32px 90px rgba(0,0,0,.42)!important;
+}
+.dash-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px}
+.dash-top h3{font-size:22px;color:#f2f8ff;margin:5px 0 0;letter-spacing:-.7px}
+.dash-kicker{font-size:10px;font-weight:850;letter-spacing:1.5px;color:#a9c9eb}
+.dash-period{font-size:9px;letter-spacing:1px;font-weight:800;color:#b7c9dd;border:1px solid rgba(218,240,255,.17);border-radius:999px;padding:7px 9px;background:rgba(255,255,255,.035)}
+.dash-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.dash-kpi{min-width:0;padding:15px 13px;border:1px solid rgba(221,241,255,.16);border-radius:19px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.012));box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+.dash-kpi span,.dash-kpi small{display:block;color:#a9bfd6;font-size:11px}
+.dash-kpi strong{display:block;color:#f5f9ff;font-size:clamp(16px,2vw,24px);letter-spacing:-.7px;margin:7px 0 4px;overflow-wrap:anywhere}
+.dash-kpi small{font-size:9px;color:#819ab5}
+.dash-kpi.accent-kpi{background:linear-gradient(145deg,rgba(255,138,36,.15),rgba(255,255,255,.015));border-color:rgba(255,177,95,.24)}
+.dash-kpi.accent-kpi strong{color:#ffc27c}
+.chart-panel{padding:18px 17px 10px;border-radius:21px;border:1px solid rgba(221,241,255,.17);background:linear-gradient(145deg,rgba(3,13,28,.30),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
+.chart-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.chart-head strong,.chart-head span{display:block}
+.chart-head strong{font-size:13px;color:#f0f6ff}
+.chart-head div>span{font-size:10px;color:#8fa8c1;margin-top:4px}
+.chart-legend{font-size:10px;color:#c8d8e8;white-space:nowrap}
+.chart-legend i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff9d42;box-shadow:0 0 12px rgba(255,157,66,.8);margin-right:5px}
+.performance-chart{display:block;width:100%;height:auto;margin-top:7px;overflow:visible}
+.chart-grid path{fill:none;stroke:rgba(183,213,242,.11);stroke-width:1}
+.performance-chart text{font-size:10px;fill:#8ea6bf;letter-spacing:.7px}
+.chart-area{fill:url(#chartFill)}
+.chart-line{fill:none;stroke:url(#chartLine);stroke-width:3.5;stroke-linecap:round;filter:drop-shadow(0 0 5px rgba(255,151,58,.25))}
+.chart-dot{fill:#ffbd73;stroke:rgba(255,255,255,.85);stroke-width:2}
+.dash-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 3px 0;color:#9db3c9;font-size:10px}
+.dash-bottom>span:first-child{color:#c7d8e8}
+.status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#43d9a0;box-shadow:0 0 10px rgba(67,217,160,.65);margin-right:7px}
+.heroCard p{color:#a9bfd6}
+.grid .card,.contactbox{border-radius:24px!important}
+.grid .card{padding:29px}
+.btn{border-radius:999px}
+.btn.orange{box-shadow:0 8px 26px rgba(255,138,36,.18)}
+@media(max-width:860px){
+ .dashboard-preview{max-width:none!important;margin-top:10px!important}
+}
+@media(max-width:560px){
+ .dashboard-preview{padding:16px!important;border-radius:22px!important}
+ .dash-top{align-items:flex-start}
+ .dash-period{font-size:8px;padding:6px 7px}
+ .dash-kpis{gap:7px}
+ .dash-kpi{padding:12px 9px;border-radius:15px}
+ .dash-kpi span{font-size:10px}
+ .dash-kpi strong{font-size:15px}
+ .chart-panel{padding:14px 11px 7px;border-radius:17px}
+ .chart-head{align-items:flex-start}
+ .dash-bottom{font-size:9px}
+}
+/* Keep the Dinilove floating sticker hidden in this isolated homepage preview only. */
+.dinilove-sticker,.dinilove-widget,#dinilove-sticker,[data-dinilove-sticker],.dinilove-float,.dinilove-floating-sticker{
+  display:none!important;visibility:hidden!important;pointer-events:none!important
+}
