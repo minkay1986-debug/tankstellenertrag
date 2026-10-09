@@ -77,7 +77,7 @@ function update(){
  document.getElementById('ertrag').textContent=eur(e);document.getElementById('losses').textContent=eur(losses);
  document.getElementById('efficiency').textContent=u<=0?'Umsatz fehlt':w>u?'EK über Umsatz':lossRate<1?'unter 1 %':lossRate<2?'1–2 %':'über 2 %';
  document.getElementById('efficiencySub').textContent='Verlustquote '+pct(lossRate);
- const reduction=losses*.25;document.getElementById('potential').textContent=eur(reduction);
+ const reduction=(u>0 && w<=u)?losses*.25:0;document.getElementById('potential').textContent=eur(reduction);
  document.getElementById('insightTitle').textContent=u<=0?'Bitte Umsatz eingeben':w>u?'Wareneinsatz über Umsatz':losses===0?'Keine Warenverluste erfasst':(lossRate>=2?'Warenverluste prüfen':'Ertragsprofil');
  document.getElementById('insightText').textContent=u<=0?'Bitte einen Shop-Umsatz größer als 0 eingeben.':w>u?'Der eingetragene Wareneinsatz liegt über dem Umsatz. Bitte prüfen Sie Werte, Zeitraum und Umsatz-/EK-Basis.':losses===0?'Aktuell sind keine Schwund-, Abschriften- oder sonstigen Verluste eingetragen.':biggest[1]>0?('Größter erfasster Verlust: '+biggest[0]+' mit '+eur(biggest[1])+'. Verlustquote: '+pct(lossRate)+'.'):'';
  renderCurve(u,w,s,a,so,e);
