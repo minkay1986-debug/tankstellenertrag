@@ -45,6 +45,55 @@ footer{background:#051022!important;color:#c4d8ee!important;border-top:1px solid
 a:hover{color:#9bcfff}
 @media(max-width:760px){.heroin{grid-template-columns:1fr!important;gap:28px!important;padding:58px 20px 72px!important}.heroCard{margin:0!important;max-width:none!important;transform:none!important}.navin{padding:13px 18px!important}.navlinks{gap:12px!important;flex-wrap:wrap;justify-content:flex-end}.navlinks a{font-size:12px}}
 </style>
+
+<style id="premium-mobile-glass-polish">
+:root{--blue-accent:#69b6ff;--glass-border:rgba(154,202,255,.2)}
+/* Softer, more premium cards */
+.card,.feature,.step,.tile,.heroCard,.contactbox{
+  border:1px solid rgba(147,195,245,.18)!important;
+  border-radius:22px!important;
+  background:linear-gradient(145deg,rgba(19,46,79,.78),rgba(8,25,48,.88))!important;
+  box-shadow:0 16px 40px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.045)!important;
+}
+/* Remove old cream icon tiles and orange glyphs from this preview */
+.card .icon,.feature .icon,.step .icon,.tile .icon,
+.card .ico,.feature .ico,.step .ico,.tile .ico,
+.card .symbol,.feature .symbol,.step .symbol,.tile .symbol{
+  background:rgba(74,156,255,.12)!important;
+  color:#91cbff!important;
+  border:1px solid rgba(127,190,255,.22)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06)!important;
+}
+.card strong,.feature strong,.step strong,.tile strong{color:#9bcfff!important}
+h2,h3{letter-spacing:-.035em!important}
+@media(max-width:760px){
+  .heroin{padding:44px 18px 58px!important;gap:24px!important}
+  h1{font-size:clamp(38px,11vw,54px)!important;line-height:1.01!important;letter-spacing:-1.9px!important}
+  h2{font-size:clamp(27px,7.5vw,34px)!important;line-height:1.08!important;letter-spacing:-1.1px!important}
+  h3{font-size:19px!important;line-height:1.2!important}
+  .lead{font-size:17px!important;line-height:1.65!important}
+  section:not(.hero){padding-top:44px!important;padding-bottom:44px!important}
+  .grid{grid-template-columns:1fr!important;gap:14px!important}
+  .grid .card,.card,.feature,.step,.tile{
+    padding:22px!important;min-height:0!important;border-radius:20px!important;
+  }
+  .grid .card p,.card p,.feature p,.step p,.tile p{font-size:16px!important;line-height:1.6!important;margin-bottom:0}
+  .card .icon,.feature .icon,.step .icon,.tile .icon,
+  .card .ico,.feature .ico,.step .ico,.tile .ico,
+  .card .symbol,.feature .symbol,.step .symbol,.tile .symbol{
+    width:48px!important;height:48px!important;border-radius:15px!important;
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    font-size:20px!important;margin:8px 0 14px!important;
+  }
+  .btn{width:100%!important;margin:12px 0 0!important;min-height:50px!important;border-radius:13px!important}
+  .heroCard{padding:22px!important}
+  .navin{gap:12px!important;align-items:center!important}
+  .logo{font-size:19px!important;letter-spacing:-.5px!important}
+  .navlinks{gap:10px!important}
+  .navlinks a:not(.navcta){display:none!important}
+  .navcta{padding:10px 13px!important;border-radius:12px!important;white-space:nowrap}
+}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="navin">
