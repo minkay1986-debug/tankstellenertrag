@@ -502,3 +502,13 @@ iframe[src*="dinilove" i],iframe[title*="dinilove" i],[id*="dinilove" i],[class*
 .icon{background:rgba(74,156,255,.14)!important;color:#8fc4ff!important}
 .quote{border-left-color:#4a9cff!important}
 .tse-flow-nav a.tse-flow-primary{background:linear-gradient(135deg,rgba(74,156,255,.28),rgba(50,126,213,.2))!important;border-color:rgba(121,183,255,.55)!important}
+
+
+/* Chart-Farben konsequent blau – keine orangefarbenen Datenpunkte oder Vergleichsmarker */
+.chart-dot{fill:#ffffff!important;stroke:#62dcff!important;stroke-width:3!important;filter:drop-shadow(0 0 7px rgba(98,220,255,.75))!important}
+.chart-halo{fill:rgba(74,156,255,.18)!important;stroke:rgba(125,200,255,.48)!important}
+.chart-line{filter:drop-shadow(0 0 5px rgba(75,207,255,.24))!important}
+.chart-legend .legend-prior{background:#9ab5df!important;box-shadow:0 0 10px rgba(154,181,223,.45)!important}
+.chart-legend i{background:#62dcff!important;box-shadow:0 0 14px rgba(98,220,255,.85)!important}
+.chart-tooltip{fill:rgba(30,91,151,.62)!important;stroke:rgba(155,219,255,.45)!important}
+.chart-change{color:#8ef2c7!important}
