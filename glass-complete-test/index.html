@@ -52,14 +52,27 @@ section{padding:90px 24px}.wrap{max-width:1180px;margin:auto}.center{text-align:
     <div class="dash-kpi accent-kpi"><span>Marge</span><strong>47,6 %</strong><small>Beispielwert</small></div>
   </div>
   <div class="chart-panel">
-    <div class="chart-head"><div><strong>Ertragsentwicklung</strong><span>Illustrative Demo · keine Echtdaten</span></div><span class="chart-legend"><i></i> Rohertrag</span></div>
-    <svg class="performance-chart" viewBox="0 0 520 190" role="img" aria-label="Beispielhaftes Liniendiagramm einer monatlichen Ertragsentwicklung">
-      <defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#ff9b3d" stop-opacity=".30"/><stop offset="100%" stop-color="#ff9b3d" stop-opacity="0"/></linearGradient><linearGradient id="chartLine" x1="0" x2="1"><stop stop-color="#ffd08c"/><stop offset="100%" stop-color="#ff8a24"/></linearGradient></defs>
-      <g class="chart-grid"><path d="M34 28H500 M34 66H500 M34 104H500 M34 142H500"/><path d="M34 20V150 M150 20V150 M266 20V150 M382 20V150 M498 20V150"/></g>
-      <path class="chart-area" d="M34 126 C70 120 83 95 118 102 S174 115 208 81 S264 92 300 70 S360 85 388 54 S450 62 498 29 L498 150 L34 150 Z"/>
-      <path class="chart-line" d="M34 126 C70 120 83 95 118 102 S174 115 208 81 S264 92 300 70 S360 85 388 54 S450 62 498 29"/>
-      <circle cx="498" cy="29" r="5" class="chart-dot"/><text x="34" y="174">JAN</text><text x="150" y="174">MÄR</text><text x="266" y="174">MAI</text><text x="382" y="174">JUL</text><text x="498" y="174" text-anchor="end">SEP</text>
+    <div class="chart-head">
+      <div><span class="chart-eyebrow">PERFORMANCE ANALYTICS</span><strong>Rohertrag im Jahresverlauf</strong><span>Illustrative Demo · keine Echtdaten</span></div>
+      <span class="chart-legend"><i></i> Aktuell <b class="legend-prior"></b> Vergleich</span>
+    </div>
+    <div class="chart-highlight"><div><span>Beispiel-Rohertrag</span><strong>100.000 <em>€</em></strong></div><span class="chart-change">↗ +8,4 % <small>Demo</small></span></div>
+    <svg class="performance-chart" viewBox="0 0 620 255" role="img" aria-label="Illustratives Vergleichsdiagramm mit leuchtender Ertragskurve und gestrichelter Vergleichslinie">
+      <defs>
+        <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4cc9ff" stop-opacity=".34"/><stop offset="55%" stop-color="#3185ff" stop-opacity=".12"/><stop offset="100%" stop-color="#3185ff" stop-opacity="0"/></linearGradient>
+        <linearGradient id="chartLine" x1="0" x2="1"><stop stop-color="#a7f1ff"/><stop offset="48%" stop-color="#51caff"/><stop offset="100%" stop-color="#ffb56b"/></linearGradient>
+        <filter id="lineGlow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <g class="chart-grid"><path d="M48 34H592 M48 78H592 M48 122H592 M48 166H592 M48 210H592"/><path d="M48 26V210 M138 26V210 M228 26V210 M318 26V210 M408 26V210 M498 26V210 M588 26V210"/></g>
+      <path class="compare-line" d="M48 173 C83 161 102 176 138 157 S194 147 228 160 S284 132 318 143 S374 120 408 133 S465 112 498 126 S556 102 588 109"/>
+      <path class="chart-area" d="M48 184 C82 173 104 132 138 145 S192 164 228 117 S284 130 318 94 S375 112 408 73 S464 96 498 58 S554 66 588 35 L588 210 L48 210 Z"/>
+      <path class="chart-line chart-line-glow" d="M48 184 C82 173 104 132 138 145 S192 164 228 117 S284 130 318 94 S375 112 408 73 S464 96 498 58 S554 66 588 35" filter="url(#lineGlow)"/>
+      <path class="chart-line chart-line-core" d="M48 184 C82 173 104 132 138 145 S192 164 228 117 S284 130 318 94 S375 112 408 73 S464 96 498 58 S554 66 588 35"/>
+      <circle cx="588" cy="35" r="11" class="chart-halo"/><circle cx="588" cy="35" r="5" class="chart-dot"/>
+      <rect x="502" y="4" width="86" height="24" rx="12" class="chart-tooltip"/><text x="545" y="20" text-anchor="middle" class="chart-tooltip-text">100.000 €</text>
+      <g class="chart-months"><text x="48" y="237">JAN</text><text x="138" y="237">MÄR</text><text x="228" y="237">MAI</text><text x="318" y="237">JUL</text><text x="408" y="237">SEP</text><text x="498" y="237">NOV</text><text x="588" y="237" text-anchor="end">DEZ</text></g>
     </svg>
+    <div class="chart-foot"><span><i class="foot-current"></i>Aktueller Verlauf (Demo)</span><span><i class="foot-compare"></i>Vergleichsverlauf (Demo)</span></div>
   </div>
   <div class="dash-bottom"><span><i class="status-dot"></i> Warengruppen im Blick</span><span>Umsatz · Marge · Schwund</span></div>
 </div>
