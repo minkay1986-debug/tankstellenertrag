@@ -365,6 +365,19 @@ body{
     rgba(0,0,0,.018)) !important;
 }
 
+
+/* V11 — always-visible customer access on the isolated modern landing-page test */
+.navin{gap:18px}
+.navlinks{gap:22px}
+.navactions{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.navactions a{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:9px;font-size:13px;font-weight:800;white-space:nowrap}
+.navlogin{border:1px solid rgba(220,236,255,.30);color:#f2f7ff}
+.navregister{background:var(--orange);color:#111!important}
+.navlogin:hover{background:rgba(255,255,255,.08)}
+.navregister:hover{filter:brightness(1.07)}
+@media(max-width:1050px){.navlinks{gap:12px;font-size:12px}.navactions a{padding:8px 10px;font-size:12px}.navin{padding:13px 16px;gap:10px}}
+@media(max-width:860px){.navin{flex-wrap:wrap}.navlinks{display:none}.navactions{margin-left:auto}}
+@media(max-width:420px){.logo{font-size:18px}.navactions{gap:6px}.navactions a{padding:7px 8px;font-size:11px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -385,6 +398,7 @@ body{
 <nav class="nav"><div class="navin">
 <div class="logo">Tankstellen<span>Ertrag</span></div>
 <div class="navlinks"><a href="#check">Wirtschaftlichkeitscheck</a><a href="#analyse">Betriebsanalyse</a><a href="ertrag-steigern-tankstelle.html">Mehr Ertrag</a><a href="fragen-tankstellen.html">Fragen</a><a href="#kontakt">Kontakt</a></div>
+<div class="navactions"><a class="navlogin" href="https://app.tankstellenertrag.de/?login=1">Kunden-Login</a><a class="navregister" href="https://app.tankstellenertrag.de/?signup=1">Registrieren</a></div>
 </div></nav>
 
 <header class="hero"><div class="heroin">
