@@ -369,3 +369,67 @@ body>.wrap .cta{
 .dinilove-sticker,.dinilove-widget,#dinilove-sticker,[data-dinilove-sticker],.dinilove-float,.dinilove-floating-sticker{
   display:none!important;visibility:hidden!important;pointer-events:none!important
 }
+
+
+/* WOW PERFORMANCE CHART — homepage isolated preview */
+.dashboard-preview{
+  max-width:610px!important;padding:24px!important;border-radius:30px!important;
+  background:radial-gradient(ellipse at 80% 0%,rgba(65,166,255,.16),transparent 56%),linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.014) 52%,rgba(1,9,22,.26))!important;
+  border:1px solid rgba(221,245,255,.32)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.62),inset 0 -24px 42px rgba(0,0,0,.16),0 34px 95px rgba(0,0,0,.48),0 0 45px rgba(47,147,255,.10)!important;
+}
+.dash-top{align-items:center;margin-bottom:19px}
+.dash-kicker{color:#8edfff!important;letter-spacing:1.8px!important}
+.dash-top h3{font-size:23px!important}
+.dash-period{border-color:rgba(155,219,255,.23)!important;background:rgba(74,154,236,.08)!important;color:#b8d9f6!important}
+.dash-kpis{gap:9px!important}
+.dash-kpi{border-radius:20px!important;border-color:rgba(189,226,255,.21)!important;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.014))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.23),0 10px 26px rgba(0,0,0,.13)!important}
+.dash-kpi strong{font-size:clamp(17px,2.2vw,25px)!important}
+.dash-kpi.accent-kpi{border-color:rgba(255,180,108,.35)!important;background:linear-gradient(145deg,rgba(255,153,69,.19),rgba(255,255,255,.025))!important;box-shadow:inset 0 1px 0 rgba(255,221,183,.24),0 0 28px rgba(255,138,36,.07)!important}
+.dash-kpi.accent-kpi strong{color:#ffc487!important;text-shadow:0 0 20px rgba(255,169,89,.20)}
+.chart-panel{padding:19px 16px 13px!important;border-radius:24px!important;border-color:rgba(170,220,255,.23)!important;background:linear-gradient(150deg,rgba(4,16,35,.58),rgba(12,42,74,.28) 52%,rgba(255,255,255,.025))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 18px 38px rgba(0,0,0,.17)!important}
+.chart-head{align-items:flex-start!important}
+.chart-head strong{font-size:14px!important;margin-top:5px}
+.chart-head div>span{font-size:10px!important}
+.chart-eyebrow{color:#80dfff!important;font-size:9px!important;letter-spacing:1.5px!important;font-weight:850}
+.chart-legend{display:flex!important;align-items:center;gap:6px;font-size:9px!important;color:#b9cfe5!important}
+.chart-legend i{margin:0!important;width:7px;height:7px;background:#62dcff!important;box-shadow:0 0 14px rgba(98,220,255,.85)!important}
+.legend-prior{display:inline-block;width:15px;border-top:2px dashed #819bc2;margin-left:5px}
+.chart-highlight{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:16px;padding:13px 14px;border-radius:17px;background:linear-gradient(100deg,rgba(55,151,255,.13),rgba(255,255,255,.025));border:1px solid rgba(155,219,255,.12)}
+.chart-highlight>div>span{display:block;font-size:10px;color:#9eb8d3}
+.chart-highlight strong{display:block;font-size:clamp(23px,3vw,32px);letter-spacing:-1.1px;color:#f4f9ff;margin-top:2px}
+.chart-highlight em{font-style:normal;font-size:.65em;color:#b5dfff}
+.chart-change{font-size:12px;font-weight:850;color:#8ef2c7;white-space:nowrap;text-shadow:0 0 14px rgba(80,240,190,.18)}
+.chart-change small{display:block;text-align:right;font-size:9px;color:#829db8}
+.performance-chart{width:100%;height:auto;margin-top:8px;overflow:visible}
+.chart-grid path{stroke:rgba(159,206,248,.13)!important;stroke-width:1!important}
+.chart-area{fill:url(#chartFill)!important}
+.chart-line{fill:none!important;stroke:url(#chartLine)!important;stroke-width:3.5!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.chart-line-glow{opacity:.58;stroke-width:7!important}
+.chart-line-core{filter:drop-shadow(0 0 7px rgba(75,207,255,.48))}
+.compare-line{fill:none;stroke:#8fa8d1;stroke-width:2;stroke-dasharray:5 7;opacity:.72;stroke-linecap:round}
+.chart-dot{fill:#fff!important;stroke:#ffbd76!important;stroke-width:3!important;filter:drop-shadow(0 0 7px rgba(255,171,97,.95))}
+.chart-halo{fill:rgba(255,171,97,.15);stroke:rgba(255,196,136,.4);stroke-width:1}
+.chart-tooltip{fill:rgba(255,255,255,.13);stroke:rgba(255,255,255,.36);stroke-width:1}
+.chart-tooltip-text{fill:#fff!important;font-size:11px!important;font-weight:850}
+.chart-months text{fill:#89a9c9!important;font-size:10px!important;letter-spacing:1px}
+.chart-foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:7px 5px 0;color:#9cb5cf;font-size:9px}
+.chart-foot i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px}
+.foot-current{background:#61d9ff;box-shadow:0 0 9px rgba(97,217,255,.8)}
+.foot-compare{background:#8fa8d1}
+.dash-bottom{border-top:1px solid rgba(175,218,255,.10);margin-top:14px;padding-top:14px!important}
+@media(min-width:861px){
+ .heroin{grid-template-columns:minmax(0,1fr) minmax(450px,1.08fr)!important;gap:42px!important}
+ .dashboard-preview{width:100%}
+}
+@media(max-width:860px){
+ .dashboard-preview{max-width:none!important}
+}
+@media(max-width:560px){
+ .dashboard-preview{padding:14px!important;border-radius:23px!important}
+ .chart-panel{padding:14px 10px 10px!important;border-radius:19px!important}
+ .chart-highlight{padding:11px;border-radius:14px}
+ .chart-foot{font-size:8px}
+ .chart-head strong{font-size:12px!important}
+ .chart-legend{font-size:8px!important}
+}
