@@ -98,11 +98,24 @@ h2,h3{letter-spacing:-.035em!important}
 <style id="premium-icons-overrides">
 .icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .icon svg{width:21px;height:21px;display:block;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<style id="homepage-primary-actions">
+.navcta{display:inline-flex!important;align-items:center;justify-content:center;padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,#4a9cff,#327ed5);color:#fff!important;text-decoration:none;font-weight:800;white-space:nowrap}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.hero-actions .btn{margin:0}
+@media(max-width:760px){
+ .navin{align-items:center!important}
+ .navlinks{display:flex!important;align-items:center!important;gap:8px!important}
+ .navlinks a:not(.navcta){display:none!important}
+ .navcta{font-size:13px!important;padding:10px 12px!important}
+ .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+ .hero-actions .btn{width:100%!important;box-sizing:border-box;text-align:center}
+}
 </style></head>
 <body>
 <nav class="nav"><div class="navin">
 <div class="logo">Tankstellen<span>Ertrag</span></div>
-<div class="navlinks"><a href="#check">Wirtschaftlichkeitscheck</a><a href="#analyse">Betriebsanalyse</a><a href="ertrag-steigern-tankstelle.html">Mehr Ertrag</a><a href="fragen-tankstellen.html">Fragen</a><a href="#kontakt">Kontakt</a></div>
+<div class="navlinks"><a href="#check">QuickCheck</a><a href="#analyse">Betriebsanalyse</a><a href="ertrag-steigern-tankstelle.html">Mehr Ertrag</a><a href="fragen-tankstellen.html">Fragen</a><a href="#kontakt">Kontakt</a><a class="navcta" href="https://app.tankstellenertrag.de/?login=1">Kundenlogin</a></div>
 </div></nav>
 
 <header class="hero"><div class="heroin">
@@ -113,7 +126,7 @@ h2,h3{letter-spacing:-.035em!important}
 <p class="lead">Wie kann ich mit meiner Tankstelle mehr Ertrag machen? Der erste Schritt ist eine strukturierte Analyse von Umsatz, Marge, Wareneinsatz, Warengruppen, Schwund und Kosten.</p><p class="lead">TankstellenErtrag hilft dabei, Auffälligkeiten und mögliche Potenziale sichtbar zu machen – auf Basis der eigenen Betriebsdaten und ohne pauschale Erfolgsversprechen.</p>
 <p class="lead">TankstellenErtrag verbindet praktische Erfahrung aus Tankstelle und Handel mit strukturierter Kennzahlenanalyse – verständlich und auf den einzelnen Betrieb zugeschnitten.</p>
 <div class="mini" style="margin:14px 0 18px;color:#c7cdd0;font-size:14px"><b>Regional vor Ort · deutschlandweit per Fernanalyse</b><br><span style="color:#9fa8ad">Aktuell in der Testphase mit kostenloser Erstberatung.</span></div>
-<a class="btn orange" href="#kontakt">Kostenlose Erstberatung anfragen</a>
+<div class="hero-actions"><a class="btn orange" href="#check">Kostenlosen QuickCheck ansehen</a><a class="btn ghost" href="https://app.tankstellenertrag.de/?login=1">Kundenlogin</a></div>
 <a class="btn ghost" href="#ablauf">So funktioniert es</a>
 </div>
 <div class="heroCard">
