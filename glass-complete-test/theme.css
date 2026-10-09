@@ -490,3 +490,7 @@ body>.wrap .cta{
  .navactions{gap:6px}
  .navactions a{min-height:34px;padding:7px 9px;font-size:11px}
 }
+
+
+/* Isolated preview: hide DiniLove floating widgets regardless of their wrapper naming. */
+iframe[src*="dinilove" i],iframe[title*="dinilove" i],[id*="dinilove" i],[class*="dinilove" i],[data-widget*="dinilove" i]{display:none!important;visibility:hidden!important;pointer-events:none!important}
