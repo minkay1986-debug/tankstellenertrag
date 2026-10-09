@@ -84,7 +84,7 @@ function update(){
 }
 function renderWaterfall(u,w,s,a,so,rest){
  const g=document.getElementById('wf');const max=Math.max(u,1);const top=28,bottom=226,h=bottom-top, scale=h/max;
- const vals=[u,w,s,a,so,rest], labels=['Umsatz','EK','Schwund','Abschriften','Sonstige','Rest nach Verlusten'];
+ const vals=[u,w,s,a,so,rest], labels=['Umsatz','EK','Schwund','Abschriften','Sonstige','Restbetrag'];
  const x=[30,155,280,405,530,655], bw=72;
  let cumulative=u, out='';
  function rect(xv,yv,hv,cls,label,value,delay){
