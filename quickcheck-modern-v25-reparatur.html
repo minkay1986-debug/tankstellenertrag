@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TankstellenErtrag – QuickCheck V24 · Glass Bevel</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#07111f;--text:#f2f7fc;--muted:#96a8b9;--orange:#ff8a24;--orange2:#ffb35f;--blue:#4a9cff;--blue2:#83c2ff;--red:#e96352;--green:#35cf93;--line:rgba(150,190,225,.14)}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:radial-gradient(760px 430px at 88% 8%,rgba(74,156,255,.18),transparent 68%),radial-gradient(760px 520px at 16% 66%,rgba(42,119,214,.15),transparent 70%),radial-gradient(980px 340px at 54% 88%,rgba(75,145,220,.085),transparent 68%),radial-gradient(720px 260px at 58% 108%,rgba(255,138,36,.10),transparent 70%),linear-gradient(180deg,#030914 0%,#06111d 52%,#081725 100%);overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 0 45%,rgba(125,190,255,.025) 51%,transparent 58%);z-index:0}
+body:after{content:"";position:fixed;left:50%;bottom:-150px;transform:translateX(-50%);width:min(980px,115vw);height:420px;pointer-events:none;background:radial-gradient(ellipse at center,rgba(255,151,76,.13) 0%,rgba(74,156,255,.09) 28%,rgba(38,91,145,.06) 45%,transparent 70%);filter:blur(20px);opacity:.9;z-index:0}
+.wrap{width:min(1220px,calc(100% - 34px));margin:auto;position:relative;z-index:1}.top{padding:24px 0 10px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:21px;font-weight:900;letter-spacing:-.7px}.brand span{color:var(--orange)}.badge{font-size:11px;color:#ffd8ba;border:1px solid rgba(255,138,36,.27);background:rgba(255,138,36,.07);padding:7px 11px;border-radius:999px}
+.hero{padding:32px 0 20px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;font-weight:850;color:var(--orange2)}h1{font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-3px;margin:10px 0 13px}.lead{font-size:16px;color:#c2cbd0;max-width:740px;margin:0;line-height:1.55}
+.layout{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:18px;padding:22px 0 44px;position:relative}
+.layout:before{content:"";position:absolute;inset:-90px -80px -70px;pointer-events:none;z-index:0;background:radial-gradient(560px 440px at 72% 32%,rgba(76,160,255,.25),transparent 70%),radial-gradient(480px 390px at 20% 66%,rgba(43,126,224,.18),transparent 72%),radial-gradient(600px 260px at 70% 94%,rgba(255,138,36,.085),transparent 72%);filter:blur(34px) saturate(120%);opacity:.82}.glass{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.022) 42%,rgba(3,12,22,.035) 100%) padding-box;border:1px solid rgba(255,255,255,.045);border-radius:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 1px 0 0 rgba(221,241,255,.055),inset 2px 2px 3px -2px rgba(255,255,255,.20),inset -2px -2px 4px -2px rgba(0,0,0,.24),inset 0 -1px 0 rgba(0,0,0,.18),inset 0 -20px 38px rgba(0,0,0,.075),0 28px 82px rgba(0,0,0,.48),0 0 58px rgba(54,143,240,.055);backdrop-filter:blur(22px) saturate(155%);-webkit-backdrop-filter:blur(22px) saturate(155%);position:relative;overflow:hidden;isolation:isolate}.glass:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.62) 0%,rgba(224,244,255,.34) 13%,rgba(255,255,255,.10) 31%,rgba(255,255,255,.035) 52%,rgba(145,197,236,.08) 76%,rgba(0,0,0,.20) 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:2}.glass:after{content:"";position:absolute;top:0;left:9%;right:9%;height:1px;border-radius:99px;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.22) 18%,rgba(255,255,255,.48) 48%,rgba(201,231,255,.24) 78%,transparent 100%);filter:blur(.35px);opacity:.82;pointer-events:none;z-index:3}.glass>*{position:relative;z-index:1}.glass .panelhead,.glass .resulthead{filter:drop-shadow(0 1px 0 rgba(255,255,255,.025))}
+.panel{padding:25px;box-shadow:inset 0 0 0 1px rgba(185,222,249,.025)}.panelhead{display:flex;justify-content:space-between;gap:15px;margin-bottom:20px}.paneltitle{font-size:21px;font-weight:850;letter-spacing:-.6px}.paneldesc{font-size:12px;color:var(--muted);margin-top:4px}.progress{display:flex;gap:5px}.progress i{width:23px;height:4px;border-radius:10px;background:rgba(255,255,255,.11)}.progress i.on{background:var(--orange)}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field label{display:block;font-size:11px;font-weight:750;color:#dce1e4;margin-bottom:6px}.field input,.field select{width:100%;border:1px solid rgba(135,185,230,.15);background:rgba(5,8,10,.42);color:#fff;border-radius:11px;padding:12px 12px;font:inherit;font-size:14px;outline:none}.field input:focus,.field select:focus{border-color:rgba(255,138,36,.75);box-shadow:0 0 0 4px rgba(255,138,36,.08)}.field small{display:block;color:#768187;font-size:10px;margin-top:5px}.actions{display:flex;gap:9px;margin-top:20px}.btn{border:0;border-radius:11px;padding:12px 15px;font:inherit;font-weight:850;cursor:pointer}.primary{background:var(--orange);color:#161616;box-shadow:0 9px 28px rgba(255,138,36,.18)}.secondary{background:rgba(255,255,255,.06);color:#fff;border:1px solid var(--line)}
+.result{padding:24px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(185,222,249,.035)}.result:after{content:"";position:absolute;width:520px;height:520px;right:-220px;top:-250px;background:radial-gradient(circle,rgba(255,138,36,.17),transparent 64%);pointer-events:none}.result:before{content:"";position:absolute;inset:1px;border-radius:23px;pointer-events:none;border:1px solid rgba(255,255,255,.045);box-shadow:inset 0 0 45px rgba(255,255,255,.025)}.resulthead{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1}.resulttitle{font-size:21px;font-weight:850}.live{font-size:11px;color:#d7e0dc;display:flex;gap:7px;align-items:center}.live:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(53,207,147,.6)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:18px}.kpi{border:1px solid rgba(255,255,255,.13);background:linear-gradient(145deg,rgba(83,143,202,.07),rgba(5,15,27,.30));border-radius:15px;padding:15px 16px;box-shadow:inset 0 1px 0 rgba(220,241,255,.10),inset 0 -1px 0 rgba(0,0,0,.22),0 12px 32px rgba(0,0,0,.20);position:relative;overflow:hidden}.kpi:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:var(--w,50%);background:linear-gradient(90deg,var(--orange),var(--red));box-shadow:0 0 14px rgba(255,138,36,.5)}.klabel{font-size:11px;color:var(--muted)}.kvalue{font-size:25px;font-weight:900;letter-spacing:-1px;margin-top:3px}.kunit{font-size:11px;color:#7d888e}
+.chartbox{margin-top:18px;border:1px solid rgba(173,211,239,.12);border-top-color:rgba(215,239,255,.22);border-radius:19px;padding:17px;background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(3,10,19,.55));box-shadow:inset 0 1px 0 rgba(215,240,255,.09),inset 0 -2px 0 rgba(0,0,0,.22),inset 0 0 55px rgba(58,142,235,.028),0 14px 40px rgba(0,0,0,.27)}.charthead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:8px}.charttitle{font-size:13px;font-weight:850;color:#e5e9eb}.chartsub{font-size:10px;color:#78838a}.curvechart{width:100%;height:auto;display:block;overflow:visible}.curvegrid line{stroke:rgba(120,175,225,.09);stroke-width:1}.curvearea{fill:url(#curveFill)}.curvepath{fill:none;stroke:url(#curveLine);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;filter:url(#curveGlow)}.curvepoint{fill:#7fc0ff;stroke:#fff;stroke-width:2;filter:url(#curveGlow)}.curvelabel{fill:#dce2e5;font-size:11px;font-weight:800}.curvevalue{fill:#aeb8be;font-size:10px;font-weight:700}.insight{margin-top:14px;display:grid;grid-template-columns:1.25fr .75fr;gap:11px}.insightmain,.potential{border:1px solid rgba(255,255,255,.13);border-radius:15px;padding:15px;background:linear-gradient(145deg,rgba(74,156,255,.09),rgba(255,255,255,.028));box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}.insightlabel{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--blue2);font-weight:850}.insighttitle{font-size:15px;font-weight:900;margin-top:5px}.insighttext{font-size:11px;color:#9ea8ad;line-height:1.45;margin-top:4px}.potential{text-align:right;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(5,8,10,.2))}.potential .pval{font-size:24px;font-weight:900;color:#fff}.potential .pdesc{font-size:10px;color:#7f8a90;line-height:1.35}.notice{margin-top:12px;font-size:10px;color:#7f898f}
+@keyframes rise{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.wf-anim{animation:rise .55s ease both}
+@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.kpi:last-child{grid-column:1/-1}}@media(max-width:760px){.layout{grid-template-columns:1fr}}@media(max-width:620px){.wrap{width:calc(100% - 24px)}.badge{display:none}.formgrid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.kpis{grid-template-columns:1fr}.kpi:last-child{grid-column:auto}.charthead{align-items:flex-start;flex-direction:column}.insight{grid-template-columns:1fr}.potential{text-align:left}.wf-label{font-size:10px}.wf-value{font-size:9px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Tankstellen<span>Ertrag</span></div><div class="badge">QuickCheck</div></header>
+<section class="hero"><div class="eyebrow">Wirtschaftlichkeit · Shop · Ertrag</div><h1>QuickCheck für Ihre Tankstelle.</h1><p class="lead">Wenige Eckdaten eingeben – der QuickCheck zeigt sofort, wo im Shop-Ergebnis Potenzial verloren geht.</p></section>
+<main class="layout">
+<section class="glass panel">
+<div class="panelhead"><div><div class="paneltitle">Ihre Eckdaten</div><div class="paneldesc">Grundlage für die erste Warenwirtschafts-Analyse.</div></div><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+<div class="formgrid">
+<div class="field"><label>Monatlicher Shop-Umsatz</label><input id="umsatz" type="number" value="120000" min="0"><small>brutto</small></div>
+<div class="field"><label>Wareneinsatz / EK</label><input id="wareneinsatz" type="number" value="85000" min="0"><small>Einkaufswert</small></div>
+<div class="field"><label>Schwund</label><input id="schwund" type="number" value="900" min="0"><small>monatlich</small></div>
+<div class="field"><label>Abschriften</label><input id="abschriften" type="number" value="650" min="0"><small>monatlich</small></div>
+<div class="field"><label>Sonstige Warenverluste</label><input id="sonstige" type="number" value="250" min="0"><small>z. B. Bruch / Verderb</small></div>
+<div class="field"><label>Warengruppen</label><select id="gruppen"><option>Standard-Sortiment</option><option>Erweitertes Sortiment</option><option>Sehr breites Sortiment</option></select></div>
+</div>
+<div class="actions"><button class="btn primary" onclick="update()">QuickCheck berechnen</button><button class="btn secondary" onclick="resetDemo()">Demo-Werte</button></div>
+</section>
+<section class="glass result">
+<div class="resulthead"><div><div class="resulttitle">Ihr Ergebnis – auf einen Blick</div><div style="font-size:12px;color:var(--muted);margin-top:3px">Live aus Ihren Warenwirtschaftsdaten</div></div><div class="live">Live berechnet</div></div>
+<div class="kpis">
+<div class="kpi" id="k1"><div class="klabel">Shop-Rohertrag</div><div class="kvalue" id="ertrag">35.000 €</div><div class="kunit">monatlich</div></div>
+<div class="kpi" id="k2"><div class="klabel">Verluste gesamt</div><div class="kvalue" id="losses">1.800 €</div><div class="kunit">Schwund + Abschriften + sonstige Verluste</div></div>
+<div class="kpi" id="k3"><div class="klabel">Warenwirtschaft</div><div class="kvalue" id="efficiency">gut</div><div class="kunit" id="efficiencySub">Verlustquote im Blick</div></div>
+</div>
+<div class="chartbox">
+<div class="charthead"><div><div class="charttitle">Ertragskurve · Wertentwicklung im Shop</div><div class="chartsub">Vom Umsatz zum verbleibenden Ertrag nach Warenverlusten – direkt aus Ihren Eingaben</div></div></div>
+<svg class="curvechart" viewBox="0 0 760 300" role="img" aria-label="Moderne Ertragskurve des Shop-Ergebnisses">
+<defs>
+<linearGradient id="curveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#69b3ff" stop-opacity=".30"/><stop offset=".62" stop-color="#4a9cff" stop-opacity=".08"/><stop offset="1" stop-color="#4a9cff" stop-opacity="0"/></linearGradient>
+<linearGradient id="curveLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bfe2ff"/><stop offset=".45" stop-color="#5faaff"/><stop offset=".82" stop-color="#4a9cff"/><stop offset="1" stop-color="#ff9a3d"/></linearGradient>
+<filter id="curveGlow" x="-25%" y="-40%" width="150%" height="180%"><feGaussianBlur stdDeviation="5.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g class="curvegrid"><line x1="28" y1="55" x2="732" y2="55"/><line x1="28" y1="115" x2="732" y2="115"/><line x1="28" y1="175" x2="732" y2="175"/><line x1="28" y1="235" x2="732" y2="235"/></g>
+<path id="curveArea" class="curvearea"></path><path id="curvePath" class="curvepath"></path><g id="curvePoints"></g>
+</svg>
+</div>
+<div class="insight">
+<div class="insightmain"><div class="insightlabel">Automatische Einschätzung</div><div class="insighttitle" id="insightTitle">Ertragsprofil stabil</div><div class="insighttext" id="insightText">Ihre Warenverluste werden direkt ins Verhältnis zum Shop-Umsatz gesetzt.</div></div>
+<div class="potential"><div class="pval" id="potential">450 €</div><div class="pdesc">rechnerisches Monats-Potenzial bei 25 % weniger Warenverlust</div></div>
+</div>
+<div class="notice">Orientierungswert auf Basis Ihrer Eingaben – keine Prognose und keine Garantie.</div>
+</section>
+</main>
+</div>
+<script>
+const eur=n=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+const pct=n=>n.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1})+' %';
+function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function update(){
+ const u=Math.max(0,Number(document.getElementById('umsatz').value)||0), w=Math.max(0,Number(document.getElementById('wareneinsatz').value)||0), s=Math.max(0,Number(document.getElementById('schwund').value)||0), a=Math.max(0,Number(document.getElementById('abschriften').value)||0), so=Math.max(0,Number(document.getElementById('sonstige').value)||0);
+ const e=Math.max(0,u-w), losses=s+a+so, margin=u?e/u*100:0, lossRate=u?losses/u*100:0;
+ const items=[['Schwund',s],['Abschriften',a],['Sonstige',so]], biggest=items.reduce((x,y)=>y[1]>x[1]?y:x,['',0]);
+ document.getElementById('ertrag').textContent=eur(e);document.getElementById('losses').textContent=eur(losses);
+ document.getElementById('efficiency').textContent=lossRate<1?'sehr gut':lossRate<2?'im Blick':'auffällig';
+ document.getElementById('efficiencySub').textContent='Verlustquote '+pct(lossRate);
+ const reduction=losses*.25;document.getElementById('potential').textContent=eur(reduction);
+ document.getElementById('insightTitle').textContent=losses===0?'Keine Warenverluste erfasst':(lossRate>=2?'Warenverluste als Ertragshebel':'Ertragsprofil stabil');
+ document.getElementById('insightText').textContent=losses===0?'Aktuell sind keine Schwund-, Abschriften- oder sonstigen Verluste eingetragen.':biggest[1]>0?('Größter erfasster Verlust: '+biggest[0]+' mit '+eur(biggest[1])+'. Verlustquote: '+pct(lossRate)+'.'):'';
+ renderCurve(u,w,s,a,so,e);
+}
+function renderCurve(u,w,s,a,so,e){
+ const g=document.getElementById('curvePoints'), path=document.getElementById('curvePath'), area=document.getElementById('curveArea');
+ const vals=[u,Math.max(0,u-w),Math.max(0,u-w-s),Math.max(0,u-w-s-a),Math.max(0,u-w-s-a-so),Math.max(0,u-w-s-a-so)];
+ const labels=['Umsatz','nach EK','nach Schwund','nach Abschriften','nach Sonstige','verbleibend'];
+ const max=Math.max(u,1), left=38,right=722,top=35,bottom=238, step=(right-left)/(vals.length-1);
+ const pts=vals.map((v,i)=>({x:left+i*step,y:bottom-(v/max)*(bottom-top)}));
+ function smooth(points){
+   let d='M '+points[0].x+' '+points[0].y;
+   for(let i=0;i<points.length-1;i++){
+    const p=points[i],n=points[i+1],mx=(p.x+n.x)/2;
+    d+=' C '+mx+' '+p.y+' '+mx+' '+n.y+' '+n.x+' '+n.y;
+   }
+   return d;
+ }
+ const d=smooth(pts);path.setAttribute('d',d);area.setAttribute('d',d+' L '+right+' '+bottom+' L '+left+' '+bottom+' Z');
+ g.innerHTML=pts.map((p,i)=>`<g class="wf-anim" style="animation-delay:${i*.07}s"><circle class="curvepoint" cx="${p.x}" cy="${p.y}" r="${i===pts.length-1?7:5}"></circle><text class="curvevalue" x="${p.x}" y="${Math.max(18,p.y-13)}" text-anchor="middle">${eur(vals[i])}</text><text class="curvelabel" x="${p.x}" y="263" text-anchor="middle">${labels[i]}</text></g>`).join('');
+}
+function resetDemo(){document.getElementById('umsatz').value=120000;document.getElementById('wareneinsatz').value=85000;document.getElementById('schwund').value=900;document.getElementById('abschriften').value=650;document.getElementById('sonstige').value=250;update()}
+
+// Technische Absicherung: Ergebnisse bei Eingabeänderungen sofort neu berechnen.
+// Keine CSS-, Layout-, Text- oder Strukturänderungen.
+['umsatz','wareneinsatz','schwund','abschriften','sonstige','gruppen'].forEach(id=>{
+ const el=document.getElementById(id);
+ if(el) el.addEventListener('input',update);
+ if(el) el.addEventListener('change',update);
+});
+update();
+</script>
+</body></html>
